@@ -1070,7 +1070,7 @@ void ui_event_BtnConnect(lv_event_t * e)
             lv_img_set_src(ui_Image3, &ui_img_circlefillred_png);
         }
     }
-}
+} // -- add by Miao Zixiang
 void ui_event_IOT_S10(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);

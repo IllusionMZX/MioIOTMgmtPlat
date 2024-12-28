@@ -4,6 +4,8 @@
 // Project name: POS
 
 #include "../ui.h"
+#include "../../MQTT/MQTTAsync_publish.h"
+#include "sqlite3.h"
 
 void ui_IOT_S9_screen_init(void)
 {
@@ -134,7 +136,7 @@ void ui_IOT_S9_screen_init(void)
     lv_obj_clear_flag(ui_ImageHome5, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
 
     ui_Dropdown1 = lv_dropdown_create(ui_IOT_S9);
-    lv_dropdown_set_options(ui_Dropdown1, "Device 1\nDevice 2\nDevice 3");
+    //lv_dropdown_set_options(ui_Dropdown1, "Device 1\nDevice 2\nDevice 3");
     lv_obj_set_width(ui_Dropdown1, 250);
     lv_obj_set_height(ui_Dropdown1, LV_SIZE_CONTENT);    /// 1
     lv_obj_set_x(ui_Dropdown1, 0);
@@ -142,6 +144,27 @@ void ui_IOT_S9_screen_init(void)
     lv_obj_set_align(ui_Dropdown1, LV_ALIGN_CENTER);
     lv_obj_add_flag(ui_Dropdown1, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
 
+        // 查询数据库中的所有设备名
+    char **device_names;
+    int device_count;
+    int rc = query_device_names(&device_names, &device_count);
+    if (rc == SQLITE_OK) {
+        // 构建选项字符串
+        char options[1024] = "";
+        for (int i = 0; i < device_count; i++) {
+            strcat(options, device_names[i]);
+            if (i < device_count - 1) {
+                strcat(options, "\n");
+            }
+            free(device_names[i]);
+        }
+        free(device_names);
+
+        // 设置下拉框选项
+        lv_dropdown_set_options(ui_Dropdown1, options);
+    } else {
+        printf("Failed to query device names, return code %d\n", rc);
+    }
 
 
     ui_BtnConnect = lv_btn_create(ui_IOT_S9);

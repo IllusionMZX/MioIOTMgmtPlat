@@ -70,6 +70,70 @@ int query_device_info(const char *device_name, char *product_key, char *device_s
     sqlite3_finalize(stmt);
     sqlite3_close(db);
     return SQLITE_OK;
+} // -- add by Miao ZiXiang
+
+int query_device_names(char ***device_names, int *device_count) {
+    sqlite3 *db;
+    char *zErrMsg = 0;
+    int rc;
+    sqlite3_stmt *stmt;
+
+    // 打开数据库
+    rc = sqlite3_open("../SQLite_File/mqtt_config.db", &db);
+    if (rc) {
+        fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
+        return rc;
+    }
+
+    // 准备查询语句
+    const char *sql = "SELECT device_name FROM mqtt_parameters;";
+    rc = sqlite3_prepare_v2(db, sql, -1, &stmt, 0);
+    if (rc != SQLITE_OK) {
+        fprintf(stderr, "SQL error: %s\n", sqlite3_errmsg(db));
+        sqlite3_close(db);
+        return rc;
+    }
+
+    // 计算设备数量
+    *device_count = 0;
+    while (sqlite3_step(stmt) == SQLITE_ROW) {
+        (*device_count)++;
+    }
+
+    // 重置语句
+    sqlite3_reset(stmt);
+
+    // 分配内存存储设备名
+    *device_names = (char **)malloc(*device_count * sizeof(char *));
+    if (*device_names == NULL) {
+        fprintf(stderr, "Memory allocation failed\n");
+        sqlite3_finalize(stmt);
+        sqlite3_close(db);
+        return -1;
+    }
+
+    // 查询设备名并存储
+    int i = 0;
+    while (sqlite3_step(stmt) == SQLITE_ROW) {
+        const char *device_name = (const char *)sqlite3_column_text(stmt, 0);
+        (*device_names)[i] = strdup(device_name);
+        if ((*device_names)[i] == NULL) {
+            fprintf(stderr, "Memory allocation failed\n");
+            for (int j = 0; j < i; j++) {
+                free((*device_names)[j]);
+            }
+            free(*device_names);
+            sqlite3_finalize(stmt);
+            sqlite3_close(db);
+            return -1;
+        }
+        i++;
+    }
+
+    // 清理
+    sqlite3_finalize(stmt);
+    sqlite3_close(db);
+    return SQLITE_OK;
 }
 void connlost(void *context, char *cause)
 {
@@ -246,66 +310,4 @@ int connect_mqtt() {
 
     MQTTAsync_destroy(&client);
     return rc;
-}
-
-// int main(int argc, char* argv[])
-// {
-//         int rc = 0;
-
-//         /* invoke aiotMqttSign to generate mqtt connect parameters */
-//         char clientId[150] = {0};
-//         char username[65] = {0};
-//         char password[65] = {0};
-
-// 	MQTTAsync client;
-// 	MQTTAsync_connectOptions conn_opts = MQTTAsync_connectOptions_initializer;
-
-//         if ((rc = aiotMqttSign(EXAMPLE_PRODUCT_KEY, EXAMPLE_DEVICE_NAME, EXAMPLE_DEVICE_SECRET, clientId, username, password) < 0)) {
-//                 printf("aiotMqttSign -%0x4x\n", -rc);
-//                 return -1;
-//         }
-//         printf("clientid: %s\n", clientId);
-//         printf("username: %s\n", username);
-//         printf("password: %s\n", password);
-
-// 	if ((rc = MQTTAsync_create(&client, ADDRESS, clientId, MQTTCLIENT_PERSISTENCE_NONE, NULL)) != MQTTASYNC_SUCCESS)
-// 	{
-// 		printf("Failed to create client object, return code %d\n", rc);
-// 		exit(EXIT_FAILURE);
-// 	}
-
-// 	if ((rc = MQTTAsync_setCallbacks(client, NULL, connlost, messageArrived, NULL)) != MQTTASYNC_SUCCESS)
-// 	{
-// 		printf("Failed to set callback, return code %d\n", rc);
-// 		exit(EXIT_FAILURE);
-// 	}
-
-// 	conn_opts.keepAliveInterval = 60;
-// 	conn_opts.cleansession = 1;
-// 	conn_opts.onSuccess = onConnect;
-// 	conn_opts.onFailure = onConnectFailure;
-// 	conn_opts.context = client;
-//         conn_opts.username = username;
-//         conn_opts.password = password;
-
-// 	if ((rc = MQTTAsync_connect(client, &conn_opts)) != MQTTASYNC_SUCCESS)
-// 	{
-// 		printf("Failed to start connect, return code %d\n", rc);
-// 		exit(EXIT_FAILURE);
-// 	}
-
-// 	printf("Waiting for publication of %s\n"
-//          "on topic %s for client\n",
-//          PAYLOAD, TOPIC);
-
-// 	while (!finished)
-// 		#if defined(_WIN32)
-// 			Sleep(100);
-// 		#else
-// 			usleep(10000L);
-// 		#endif
-
-// 	MQTTAsync_destroy(&client);
-//  	return rc;
-// }
-  
+} // -- modify by Miao Zixiang

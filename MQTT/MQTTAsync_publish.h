@@ -33,6 +33,6 @@ void onConnect(void* context, MQTTAsync_successData* response);
 int messageArrived(void* context, char* topicName, int topicLen, MQTTAsync_message* m);
 int connect_mqtt();
 int query_device_info(const char *device_name, char *product_key, char *device_secret, char *address, char *topic, int *qos);
-
+int query_device_names(char ***device_names, int *device_count);
 
 #endif
