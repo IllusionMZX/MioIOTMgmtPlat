@@ -55,17 +55,22 @@ extern lv_obj_t * ui_Label_Socket;
 void ui_event_Panel_Return(lv_event_t * e);
 extern lv_obj_t * ui_Panel_Return;
 extern lv_obj_t * ui_Image_Return;
+void ui_event_Panel_Nas(lv_event_t * e);
 extern lv_obj_t * ui_Panel_Nas;
 extern lv_obj_t * ui_ImageNas;
+void ui_event_Panel_Router(lv_event_t * e);
 extern lv_obj_t * ui_Panel_Router;
 extern lv_obj_t * ui_ImageRouter;
+void ui_event_Panel_Sound(lv_event_t * e);
 extern lv_obj_t * ui_Panel_Sound;
 extern lv_obj_t * ui_ImageSOund;
 void ui_event_PanelLamp(lv_event_t * e);
 extern lv_obj_t * ui_PanelLamp;
 extern lv_obj_t * ui_ImageLamp;
+void ui_event_Panel_Camera(lv_event_t * e);
 extern lv_obj_t * ui_Panel_Camera;
 extern lv_obj_t * ui_ImageCamera;
+void ui_event_Panel_Socket(lv_event_t * e);
 extern lv_obj_t * ui_Panel_Socket;
 extern lv_obj_t * ui_ImageSocket;
 void ui_event_Panel_Home(lv_event_t * e);
@@ -88,6 +93,7 @@ extern lv_obj_t * ui_Label_MQTT;
 extern lv_obj_t * ui_IMG_MQTT;
 extern lv_obj_t * ui_IMG_Arrow_List_1;
 extern lv_obj_t * ui_Panel_List_Http;
+void ui_event_Panel_List_Bg1(lv_event_t * e);
 extern lv_obj_t * ui_Panel_List_Bg1;
 extern lv_obj_t * ui_Label_Http;
 extern lv_obj_t * ui_IMG_Http;
@@ -135,7 +141,6 @@ extern lv_obj_t * ui_Label10;
 void ui_event_Button5(lv_event_t * e);
 extern lv_obj_t * ui_Button5;
 extern lv_obj_t * ui_Label11;
-void ui_event_Button2(lv_event_t * e);
 extern lv_obj_t * ui_Button2;
 extern lv_obj_t * ui_Label4;
 // SCREEN: ui_IOT_S4
@@ -171,6 +176,97 @@ extern lv_obj_t * ui_ImageSocket1;
 void ui_event_Panel_Home1(lv_event_t * e);
 extern lv_obj_t * ui_Panel_Home1;
 extern lv_obj_t * ui_ImageHome1;
+// SCREEN: ui_IOT_S7
+void ui_IOT_S7_screen_init(void);
+void ui_event_IOT_S7(lv_event_t * e);
+extern lv_obj_t * ui_IOT_S7;
+extern lv_obj_t * ui_IMG_S2_Bg_5;
+extern lv_obj_t * ui_IMG_S2_Bg_6;
+extern lv_obj_t * ui_Label_Add_Device2;
+extern lv_obj_t * ui_Label_Want_to_add2;
+extern lv_obj_t * ui_Label_Click_to_Add_Device2;
+void ui_event_Panel_Return3(lv_event_t * e);
+extern lv_obj_t * ui_Panel_Return3;
+extern lv_obj_t * ui_Image_Return3;
+void ui_event_Panel_Home4(lv_event_t * e);
+extern lv_obj_t * ui_Panel_Home4;
+extern lv_obj_t * ui_ImageHome4;
+// SCREEN: ui_IOT_S8
+void ui_IOT_S8_screen_init(void);
+void ui_event_IOT_S8(lv_event_t * e);
+extern lv_obj_t * ui_IOT_S8;
+extern lv_obj_t * ui_IMG_S2_Bg_11;
+extern lv_obj_t * ui_IMG_S2_Bg_12;
+extern lv_obj_t * ui_Label__Connect1;
+extern lv_obj_t * ui_Label_Ony_MQTT1;
+extern lv_obj_t * ui_Panel_List_MQTT1;
+void ui_event_Panel_List_Bg2(lv_event_t * e);
+extern lv_obj_t * ui_Panel_List_Bg2;
+extern lv_obj_t * ui_Panel_MQTT_table1;
+extern lv_obj_t * ui_Label_MQTT2;
+extern lv_obj_t * ui_Label_MQTT3;
+extern lv_obj_t * ui_IMG_MQTT1;
+extern lv_obj_t * ui_IMG_Arrow_List_3;
+extern lv_obj_t * ui_Panel_List_Http1;
+void ui_event_Panel_List_Bg3(lv_event_t * e);
+extern lv_obj_t * ui_Panel_List_Bg3;
+extern lv_obj_t * ui_Label_Http2;
+extern lv_obj_t * ui_IMG_Http1;
+extern lv_obj_t * ui_IMG_Arrow_List_4;
+extern lv_obj_t * ui_Panel_http1;
+extern lv_obj_t * ui_Label_Http3;
+void ui_event_Panel_Return4(lv_event_t * e);
+extern lv_obj_t * ui_Panel_Return4;
+extern lv_obj_t * ui_Image_Return4;
+void ui_event_Panel_Home3(lv_event_t * e);
+extern lv_obj_t * ui_Panel_Home3;
+extern lv_obj_t * ui_ImageHome3;
+// SCREEN: ui_IOT_S9
+void ui_IOT_S9_screen_init(void);
+void ui_event_IOT_S9(lv_event_t * e);
+extern lv_obj_t * ui_IOT_S9;
+extern lv_obj_t * ui_IMG_S2_Bg_13;
+extern lv_obj_t * ui_IMG_S2_Bg_14;
+extern lv_obj_t * ui_Label__Connect2;
+extern lv_obj_t * ui_Label_Ony_MQTT2;
+extern lv_obj_t * ui_Panel_List_MQTT2;
+extern lv_obj_t * ui_Label_MQTT5;
+extern lv_obj_t * ui_IMG_MQTT2;
+extern lv_obj_t * ui_Image3;
+void ui_event_Panel_Return5(lv_event_t * e);
+extern lv_obj_t * ui_Panel_Return5;
+extern lv_obj_t * ui_Image_Return5;
+void ui_event_Panel_Home5(lv_event_t * e);
+extern lv_obj_t * ui_Panel_Home5;
+extern lv_obj_t * ui_ImageHome5;
+extern lv_obj_t * ui_Dropdown1;
+void ui_event_BtnConnect(lv_event_t * e);
+extern lv_obj_t * ui_BtnConnect;
+extern lv_obj_t * ui_Label2;
+// SCREEN: ui_IOT_S10
+void ui_IOT_S10_screen_init(void);
+void ui_event_IOT_S10(lv_event_t * e);
+extern lv_obj_t * ui_IOT_S10;
+extern lv_obj_t * ui_IMG_S2_Bg_15;
+extern lv_obj_t * ui_IMG_S2_Bg_16;
+extern lv_obj_t * ui_Label__Connect3;
+extern lv_obj_t * ui_Label_Ony_MQTT3;
+extern lv_obj_t * ui_Panel_List_MQTT3;
+extern lv_obj_t * ui_Label_MQTT4;
+extern lv_obj_t * ui_IMG_MQTT3;
+extern lv_obj_t * ui_Image1;
+void ui_event_Panel_Return6(lv_event_t * e);
+extern lv_obj_t * ui_Panel_Return6;
+extern lv_obj_t * ui_Image_Return6;
+void ui_event_Panel_Home6(lv_event_t * e);
+extern lv_obj_t * ui_Panel_Home6;
+extern lv_obj_t * ui_ImageHome6;
+extern lv_obj_t * ui_Dropdown2;
+void ui_event_BtnConnect1(lv_event_t * e);
+extern lv_obj_t * ui_BtnConnect1;
+extern lv_obj_t * ui_Label1;
+void ui_event_Spinner2(lv_event_t * e);
+extern lv_obj_t * ui_Spinner2;
 extern lv_obj_t * ui____initial_actions0;
 
 
@@ -188,6 +284,8 @@ LV_IMG_DECLARE(ui_img_homepage_png);    // assets/homepage.png
 LV_IMG_DECLARE(ui_img_mqtt_png);    // assets/MQTT.png
 LV_IMG_DECLARE(ui_img_http_png);    // assets/http.png
 LV_IMG_DECLARE(ui_img_ok_png);    // assets/ok.png
+LV_IMG_DECLARE(ui_img_database_png);    // assets/database.png
+LV_IMG_DECLARE(ui_img_circlefillgreen_png);    // assets/circlefillgreen.png
 
 
 

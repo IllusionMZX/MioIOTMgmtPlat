@@ -237,6 +237,54 @@ IOT_UI/images/ui_img_cameramonitor_png.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/IOT_UI/images/ui_img_cameramonitor_png.c.s
 .PHONY : IOT_UI/images/ui_img_cameramonitor_png.c.s
 
+IOT_UI/images/ui_img_circlefillgreen_png.obj: IOT_UI/images/ui_img_circlefillgreen_png.c.obj
+.PHONY : IOT_UI/images/ui_img_circlefillgreen_png.obj
+
+# target to build an object file
+IOT_UI/images/ui_img_circlefillgreen_png.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/IOT_UI/images/ui_img_circlefillgreen_png.c.obj
+.PHONY : IOT_UI/images/ui_img_circlefillgreen_png.c.obj
+
+IOT_UI/images/ui_img_circlefillgreen_png.i: IOT_UI/images/ui_img_circlefillgreen_png.c.i
+.PHONY : IOT_UI/images/ui_img_circlefillgreen_png.i
+
+# target to preprocess a source file
+IOT_UI/images/ui_img_circlefillgreen_png.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/IOT_UI/images/ui_img_circlefillgreen_png.c.i
+.PHONY : IOT_UI/images/ui_img_circlefillgreen_png.c.i
+
+IOT_UI/images/ui_img_circlefillgreen_png.s: IOT_UI/images/ui_img_circlefillgreen_png.c.s
+.PHONY : IOT_UI/images/ui_img_circlefillgreen_png.s
+
+# target to generate assembly for a file
+IOT_UI/images/ui_img_circlefillgreen_png.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/IOT_UI/images/ui_img_circlefillgreen_png.c.s
+.PHONY : IOT_UI/images/ui_img_circlefillgreen_png.c.s
+
+IOT_UI/images/ui_img_database_png.obj: IOT_UI/images/ui_img_database_png.c.obj
+.PHONY : IOT_UI/images/ui_img_database_png.obj
+
+# target to build an object file
+IOT_UI/images/ui_img_database_png.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/IOT_UI/images/ui_img_database_png.c.obj
+.PHONY : IOT_UI/images/ui_img_database_png.c.obj
+
+IOT_UI/images/ui_img_database_png.i: IOT_UI/images/ui_img_database_png.c.i
+.PHONY : IOT_UI/images/ui_img_database_png.i
+
+# target to preprocess a source file
+IOT_UI/images/ui_img_database_png.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/IOT_UI/images/ui_img_database_png.c.i
+.PHONY : IOT_UI/images/ui_img_database_png.c.i
+
+IOT_UI/images/ui_img_database_png.s: IOT_UI/images/ui_img_database_png.c.s
+.PHONY : IOT_UI/images/ui_img_database_png.s
+
+# target to generate assembly for a file
+IOT_UI/images/ui_img_database_png.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/IOT_UI/images/ui_img_database_png.c.s
+.PHONY : IOT_UI/images/ui_img_database_png.c.s
+
 IOT_UI/images/ui_img_homepage_png.obj: IOT_UI/images/ui_img_homepage_png.c.obj
 .PHONY : IOT_UI/images/ui_img_homepage_png.obj
 
@@ -573,6 +621,30 @@ IOT_UI/screens/ui_IOT_S1.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/IOT_UI/screens/ui_IOT_S1.c.s
 .PHONY : IOT_UI/screens/ui_IOT_S1.c.s
 
+IOT_UI/screens/ui_IOT_S10.obj: IOT_UI/screens/ui_IOT_S10.c.obj
+.PHONY : IOT_UI/screens/ui_IOT_S10.obj
+
+# target to build an object file
+IOT_UI/screens/ui_IOT_S10.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/IOT_UI/screens/ui_IOT_S10.c.obj
+.PHONY : IOT_UI/screens/ui_IOT_S10.c.obj
+
+IOT_UI/screens/ui_IOT_S10.i: IOT_UI/screens/ui_IOT_S10.c.i
+.PHONY : IOT_UI/screens/ui_IOT_S10.i
+
+# target to preprocess a source file
+IOT_UI/screens/ui_IOT_S10.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/IOT_UI/screens/ui_IOT_S10.c.i
+.PHONY : IOT_UI/screens/ui_IOT_S10.c.i
+
+IOT_UI/screens/ui_IOT_S10.s: IOT_UI/screens/ui_IOT_S10.c.s
+.PHONY : IOT_UI/screens/ui_IOT_S10.s
+
+# target to generate assembly for a file
+IOT_UI/screens/ui_IOT_S10.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/IOT_UI/screens/ui_IOT_S10.c.s
+.PHONY : IOT_UI/screens/ui_IOT_S10.c.s
+
 IOT_UI/screens/ui_IOT_S2.obj: IOT_UI/screens/ui_IOT_S2.c.obj
 .PHONY : IOT_UI/screens/ui_IOT_S2.obj
 
@@ -692,6 +764,78 @@ IOT_UI/screens/ui_IOT_S6.s: IOT_UI/screens/ui_IOT_S6.c.s
 IOT_UI/screens/ui_IOT_S6.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/IOT_UI/screens/ui_IOT_S6.c.s
 .PHONY : IOT_UI/screens/ui_IOT_S6.c.s
+
+IOT_UI/screens/ui_IOT_S7.obj: IOT_UI/screens/ui_IOT_S7.c.obj
+.PHONY : IOT_UI/screens/ui_IOT_S7.obj
+
+# target to build an object file
+IOT_UI/screens/ui_IOT_S7.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/IOT_UI/screens/ui_IOT_S7.c.obj
+.PHONY : IOT_UI/screens/ui_IOT_S7.c.obj
+
+IOT_UI/screens/ui_IOT_S7.i: IOT_UI/screens/ui_IOT_S7.c.i
+.PHONY : IOT_UI/screens/ui_IOT_S7.i
+
+# target to preprocess a source file
+IOT_UI/screens/ui_IOT_S7.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/IOT_UI/screens/ui_IOT_S7.c.i
+.PHONY : IOT_UI/screens/ui_IOT_S7.c.i
+
+IOT_UI/screens/ui_IOT_S7.s: IOT_UI/screens/ui_IOT_S7.c.s
+.PHONY : IOT_UI/screens/ui_IOT_S7.s
+
+# target to generate assembly for a file
+IOT_UI/screens/ui_IOT_S7.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/IOT_UI/screens/ui_IOT_S7.c.s
+.PHONY : IOT_UI/screens/ui_IOT_S7.c.s
+
+IOT_UI/screens/ui_IOT_S8.obj: IOT_UI/screens/ui_IOT_S8.c.obj
+.PHONY : IOT_UI/screens/ui_IOT_S8.obj
+
+# target to build an object file
+IOT_UI/screens/ui_IOT_S8.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/IOT_UI/screens/ui_IOT_S8.c.obj
+.PHONY : IOT_UI/screens/ui_IOT_S8.c.obj
+
+IOT_UI/screens/ui_IOT_S8.i: IOT_UI/screens/ui_IOT_S8.c.i
+.PHONY : IOT_UI/screens/ui_IOT_S8.i
+
+# target to preprocess a source file
+IOT_UI/screens/ui_IOT_S8.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/IOT_UI/screens/ui_IOT_S8.c.i
+.PHONY : IOT_UI/screens/ui_IOT_S8.c.i
+
+IOT_UI/screens/ui_IOT_S8.s: IOT_UI/screens/ui_IOT_S8.c.s
+.PHONY : IOT_UI/screens/ui_IOT_S8.s
+
+# target to generate assembly for a file
+IOT_UI/screens/ui_IOT_S8.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/IOT_UI/screens/ui_IOT_S8.c.s
+.PHONY : IOT_UI/screens/ui_IOT_S8.c.s
+
+IOT_UI/screens/ui_IOT_S9.obj: IOT_UI/screens/ui_IOT_S9.c.obj
+.PHONY : IOT_UI/screens/ui_IOT_S9.obj
+
+# target to build an object file
+IOT_UI/screens/ui_IOT_S9.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/IOT_UI/screens/ui_IOT_S9.c.obj
+.PHONY : IOT_UI/screens/ui_IOT_S9.c.obj
+
+IOT_UI/screens/ui_IOT_S9.i: IOT_UI/screens/ui_IOT_S9.c.i
+.PHONY : IOT_UI/screens/ui_IOT_S9.i
+
+# target to preprocess a source file
+IOT_UI/screens/ui_IOT_S9.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/IOT_UI/screens/ui_IOT_S9.c.i
+.PHONY : IOT_UI/screens/ui_IOT_S9.c.i
+
+IOT_UI/screens/ui_IOT_S9.s: IOT_UI/screens/ui_IOT_S9.c.s
+.PHONY : IOT_UI/screens/ui_IOT_S9.s
+
+# target to generate assembly for a file
+IOT_UI/screens/ui_IOT_S9.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/IOT_UI/screens/ui_IOT_S9.c.s
+.PHONY : IOT_UI/screens/ui_IOT_S9.c.s
 
 IOT_UI/ui.obj: IOT_UI/ui.c.obj
 .PHONY : IOT_UI/ui.obj
@@ -11563,6 +11707,12 @@ help:
 	@echo ... IOT_UI/images/ui_img_cameramonitor_png.obj
 	@echo ... IOT_UI/images/ui_img_cameramonitor_png.i
 	@echo ... IOT_UI/images/ui_img_cameramonitor_png.s
+	@echo ... IOT_UI/images/ui_img_circlefillgreen_png.obj
+	@echo ... IOT_UI/images/ui_img_circlefillgreen_png.i
+	@echo ... IOT_UI/images/ui_img_circlefillgreen_png.s
+	@echo ... IOT_UI/images/ui_img_database_png.obj
+	@echo ... IOT_UI/images/ui_img_database_png.i
+	@echo ... IOT_UI/images/ui_img_database_png.s
 	@echo ... IOT_UI/images/ui_img_homepage_png.obj
 	@echo ... IOT_UI/images/ui_img_homepage_png.i
 	@echo ... IOT_UI/images/ui_img_homepage_png.s
@@ -11605,6 +11755,9 @@ help:
 	@echo ... IOT_UI/screens/ui_IOT_S1.obj
 	@echo ... IOT_UI/screens/ui_IOT_S1.i
 	@echo ... IOT_UI/screens/ui_IOT_S1.s
+	@echo ... IOT_UI/screens/ui_IOT_S10.obj
+	@echo ... IOT_UI/screens/ui_IOT_S10.i
+	@echo ... IOT_UI/screens/ui_IOT_S10.s
 	@echo ... IOT_UI/screens/ui_IOT_S2.obj
 	@echo ... IOT_UI/screens/ui_IOT_S2.i
 	@echo ... IOT_UI/screens/ui_IOT_S2.s
@@ -11620,6 +11773,15 @@ help:
 	@echo ... IOT_UI/screens/ui_IOT_S6.obj
 	@echo ... IOT_UI/screens/ui_IOT_S6.i
 	@echo ... IOT_UI/screens/ui_IOT_S6.s
+	@echo ... IOT_UI/screens/ui_IOT_S7.obj
+	@echo ... IOT_UI/screens/ui_IOT_S7.i
+	@echo ... IOT_UI/screens/ui_IOT_S7.s
+	@echo ... IOT_UI/screens/ui_IOT_S8.obj
+	@echo ... IOT_UI/screens/ui_IOT_S8.i
+	@echo ... IOT_UI/screens/ui_IOT_S8.s
+	@echo ... IOT_UI/screens/ui_IOT_S9.obj
+	@echo ... IOT_UI/screens/ui_IOT_S9.i
+	@echo ... IOT_UI/screens/ui_IOT_S9.s
 	@echo ... IOT_UI/ui.obj
 	@echo ... IOT_UI/ui.i
 	@echo ... IOT_UI/ui.s

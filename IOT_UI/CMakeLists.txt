@@ -4,6 +4,10 @@ SET(SOURCES screens/ui_IOT_S1.c
     screens/ui_IOT_S6.c
     screens/ui_IOT_S2.c
     screens/ui_IOT_S4.c
+    screens/ui_IOT_S7.c
+    screens/ui_IOT_S8.c
+    screens/ui_IOT_S9.c
+    screens/ui_IOT_S10.c
     ui.c
     components/ui_comp_hook.c
     ui_helpers.c
@@ -22,6 +26,8 @@ SET(SOURCES screens/ui_IOT_S1.c
     images/ui_img_mqtt_png.c
     images/ui_img_http_png.c
     images/ui_img_ok_png.c
+    images/ui_img_database_png.c
+    images/ui_img_circlefillgreen_png.c
     fonts/ui_font_Big_Number.c
     fonts/ui_font_Bold_Font.c)
 

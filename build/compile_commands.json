@@ -37,6 +37,18 @@
 },
 {
   "directory": "E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/build",
+  "command": "C:\\msys64\\mingw64\\bin\\gcc.exe -DLV_CONF_INCLUDE_SIMPLE @CMakeFiles/main.dir/includes_C.rsp -g -std=gnu11 -o CMakeFiles\\main.dir\\IOT_UI\\images\\ui_img_circlefillgreen_png.c.obj -c E:\\Code_Project\\VScode\\C_Cpp\\LVGL\\lv_port_pc_eclipse-release-v8.3\\IOT_UI\\images\\ui_img_circlefillgreen_png.c",
+  "file": "E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/IOT_UI/images/ui_img_circlefillgreen_png.c",
+  "output": "CMakeFiles/main.dir/IOT_UI/images/ui_img_circlefillgreen_png.c.obj"
+},
+{
+  "directory": "E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/build",
+  "command": "C:\\msys64\\mingw64\\bin\\gcc.exe -DLV_CONF_INCLUDE_SIMPLE @CMakeFiles/main.dir/includes_C.rsp -g -std=gnu11 -o CMakeFiles\\main.dir\\IOT_UI\\images\\ui_img_database_png.c.obj -c E:\\Code_Project\\VScode\\C_Cpp\\LVGL\\lv_port_pc_eclipse-release-v8.3\\IOT_UI\\images\\ui_img_database_png.c",
+  "file": "E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/IOT_UI/images/ui_img_database_png.c",
+  "output": "CMakeFiles/main.dir/IOT_UI/images/ui_img_database_png.c.obj"
+},
+{
+  "directory": "E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/build",
   "command": "C:\\msys64\\mingw64\\bin\\gcc.exe -DLV_CONF_INCLUDE_SIMPLE @CMakeFiles/main.dir/includes_C.rsp -g -std=gnu11 -o CMakeFiles\\main.dir\\IOT_UI\\images\\ui_img_homepage_png.c.obj -c E:\\Code_Project\\VScode\\C_Cpp\\LVGL\\lv_port_pc_eclipse-release-v8.3\\IOT_UI\\images\\ui_img_homepage_png.c",
   "file": "E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/IOT_UI/images/ui_img_homepage_png.c",
   "output": "CMakeFiles/main.dir/IOT_UI/images/ui_img_homepage_png.c.obj"
@@ -121,6 +133,12 @@
 },
 {
   "directory": "E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/build",
+  "command": "C:\\msys64\\mingw64\\bin\\gcc.exe -DLV_CONF_INCLUDE_SIMPLE @CMakeFiles/main.dir/includes_C.rsp -g -std=gnu11 -o CMakeFiles\\main.dir\\IOT_UI\\screens\\ui_IOT_S10.c.obj -c E:\\Code_Project\\VScode\\C_Cpp\\LVGL\\lv_port_pc_eclipse-release-v8.3\\IOT_UI\\screens\\ui_IOT_S10.c",
+  "file": "E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/IOT_UI/screens/ui_IOT_S10.c",
+  "output": "CMakeFiles/main.dir/IOT_UI/screens/ui_IOT_S10.c.obj"
+},
+{
+  "directory": "E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/build",
   "command": "C:\\msys64\\mingw64\\bin\\gcc.exe -DLV_CONF_INCLUDE_SIMPLE @CMakeFiles/main.dir/includes_C.rsp -g -std=gnu11 -o CMakeFiles\\main.dir\\IOT_UI\\screens\\ui_IOT_S2.c.obj -c E:\\Code_Project\\VScode\\C_Cpp\\LVGL\\lv_port_pc_eclipse-release-v8.3\\IOT_UI\\screens\\ui_IOT_S2.c",
   "file": "E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/IOT_UI/screens/ui_IOT_S2.c",
   "output": "CMakeFiles/main.dir/IOT_UI/screens/ui_IOT_S2.c.obj"
@@ -148,6 +166,24 @@
   "command": "C:\\msys64\\mingw64\\bin\\gcc.exe -DLV_CONF_INCLUDE_SIMPLE @CMakeFiles/main.dir/includes_C.rsp -g -std=gnu11 -o CMakeFiles\\main.dir\\IOT_UI\\screens\\ui_IOT_S6.c.obj -c E:\\Code_Project\\VScode\\C_Cpp\\LVGL\\lv_port_pc_eclipse-release-v8.3\\IOT_UI\\screens\\ui_IOT_S6.c",
   "file": "E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/IOT_UI/screens/ui_IOT_S6.c",
   "output": "CMakeFiles/main.dir/IOT_UI/screens/ui_IOT_S6.c.obj"
+},
+{
+  "directory": "E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/build",
+  "command": "C:\\msys64\\mingw64\\bin\\gcc.exe -DLV_CONF_INCLUDE_SIMPLE @CMakeFiles/main.dir/includes_C.rsp -g -std=gnu11 -o CMakeFiles\\main.dir\\IOT_UI\\screens\\ui_IOT_S7.c.obj -c E:\\Code_Project\\VScode\\C_Cpp\\LVGL\\lv_port_pc_eclipse-release-v8.3\\IOT_UI\\screens\\ui_IOT_S7.c",
+  "file": "E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/IOT_UI/screens/ui_IOT_S7.c",
+  "output": "CMakeFiles/main.dir/IOT_UI/screens/ui_IOT_S7.c.obj"
+},
+{
+  "directory": "E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/build",
+  "command": "C:\\msys64\\mingw64\\bin\\gcc.exe -DLV_CONF_INCLUDE_SIMPLE @CMakeFiles/main.dir/includes_C.rsp -g -std=gnu11 -o CMakeFiles\\main.dir\\IOT_UI\\screens\\ui_IOT_S8.c.obj -c E:\\Code_Project\\VScode\\C_Cpp\\LVGL\\lv_port_pc_eclipse-release-v8.3\\IOT_UI\\screens\\ui_IOT_S8.c",
+  "file": "E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/IOT_UI/screens/ui_IOT_S8.c",
+  "output": "CMakeFiles/main.dir/IOT_UI/screens/ui_IOT_S8.c.obj"
+},
+{
+  "directory": "E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/build",
+  "command": "C:\\msys64\\mingw64\\bin\\gcc.exe -DLV_CONF_INCLUDE_SIMPLE @CMakeFiles/main.dir/includes_C.rsp -g -std=gnu11 -o CMakeFiles\\main.dir\\IOT_UI\\screens\\ui_IOT_S9.c.obj -c E:\\Code_Project\\VScode\\C_Cpp\\LVGL\\lv_port_pc_eclipse-release-v8.3\\IOT_UI\\screens\\ui_IOT_S9.c",
+  "file": "E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/IOT_UI/screens/ui_IOT_S9.c",
+  "output": "CMakeFiles/main.dir/IOT_UI/screens/ui_IOT_S9.c.obj"
 },
 {
   "directory": "E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/build",
