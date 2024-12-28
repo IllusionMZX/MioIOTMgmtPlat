@@ -7,6 +7,8 @@
         "lv_examples.h": "c",
         "lv_example_widgets.h": "c",
         "ui.h": "c",
-        "sqlite3.h": "c"
+        "sqlite3.h": "c",
+        "string.h": "c",
+        "mqttasync_publish.h": "c"
     }
 }

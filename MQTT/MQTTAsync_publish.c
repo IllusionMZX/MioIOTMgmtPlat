@@ -13,6 +13,7 @@
  * Contributors:
  *    Ian Craggs - initial contribution
  *******************************************************************************/
+// -- modify by Miao ZiXiang
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -20,13 +21,89 @@
 #include <sqlite3.h>
 #include "MQTTAsync_publish.h"
 
+#define MAX_DEVICES 10  // 根据需要调整最大设备数
 
+static ConnectParams connected_devices[MAX_DEVICES];
+static int connected_device_count = 0;
 
 int finished = 0;
 int aiotMqttSign(const char *productKey, const char *deviceName, const char *deviceSecret,
                      char clientId[150], char username[64], char password[65]);
 
-int query_device_info(const char *device_name, char *product_key, char *device_secret, char *address, char *topic, int *qos) {
+// 添加连接参数到全局数组
+int add_connect_params(ConnectParams *params) {
+    if (connected_device_count >= MAX_DEVICES) {
+        printf("Maximum number of devices reached\n");
+        return -1;
+    }
+    connected_devices[connected_device_count++] = *params;
+    return 0;
+}
+
+// 根据设备名获取连接参数
+ConnectParams* get_current_connect_params(const char *device_name) {
+    for (int i = 0; i < connected_device_count; i++) {
+        if (strcmp(connected_devices[i].device_name, device_name) == 0) {
+            return &connected_devices[i];
+        }
+    }
+    return NULL;
+}
+
+// 移除连接参数
+void remove_connect_params(const char *device_name) {
+    for (int i = 0; i < connected_device_count; i++) {
+        if (strcmp(connected_devices[i].device_name, device_name) == 0) {
+            for (int j = i; j < connected_device_count - 1; j++) {
+                connected_devices[j] = connected_devices[j + 1];
+            }
+            connected_device_count--;
+            break;
+        }
+    }
+}
+
+MQTTAsync mqtt_client_create(const char *address, const char *clientId, const char *username, const char *password) {
+    MQTTAsync client = NULL;
+    int rc;
+
+    // 创建 MQTT 客户端实例
+    rc = MQTTAsync_create(&client, address, clientId, MQTTCLIENT_PERSISTENCE_NONE, NULL);
+    if (rc != MQTTASYNC_SUCCESS) {
+        printf("Failed to create client object, return code %d\n", rc);
+        return NULL;
+    }
+
+    // 设置回调函数
+    rc = MQTTAsync_setCallbacks(client, NULL, connlost, messageArrived, NULL);
+    if (rc != MQTTASYNC_SUCCESS) {
+        printf("Failed to set callback, return code %d\n", rc);
+        MQTTAsync_destroy(&client);
+        return NULL;
+    }
+
+    // 准备连接选项
+    MQTTAsync_connectOptions conn_opts = MQTTAsync_connectOptions_initializer;
+    conn_opts.keepAliveInterval = 60;
+    conn_opts.cleansession = 1;
+    conn_opts.onSuccess = onConnect;
+    conn_opts.onFailure = onConnectFailure;
+    conn_opts.context = client;
+    conn_opts.username = username;
+    conn_opts.password = password;
+
+    // 连接到 MQTT 代理
+    rc = MQTTAsync_connect(client, &conn_opts);
+    if (rc != MQTTASYNC_SUCCESS) {
+        printf("Failed to start connect, return code %d\n", rc);
+        MQTTAsync_destroy(&client);
+        return NULL;
+    }
+
+    return client;
+}
+
+int query_device_info(char *device_name, char *product_key, char *device_secret, char *address, char *topic, int *qos) {
     sqlite3 *db;
     char *zErrMsg = 0;
     int rc;
@@ -173,14 +250,14 @@ void onSendFailure(void* context, MQTTAsync_failureData* response)
 	int rc;
 
 	printf("Message send failed token %d error code %d\n", response->token, response->code);
-	opts.onSuccess = onDisconnect;
-	opts.onFailure = onDisconnectFailure;
-	opts.context = client;
-	if ((rc = MQTTAsync_disconnect(client, &opts)) != MQTTASYNC_SUCCESS)
-	{
-		printf("Failed to start disconnect, return code %d\n", rc);
-		exit(EXIT_FAILURE);
-	}
+	// opts.onSuccess = onDisconnect;
+	// opts.onFailure = onDisconnectFailure;
+	// opts.context = client;
+	// if ((rc = MQTTAsync_disconnect(client, &opts)) != MQTTASYNC_SUCCESS)
+	// {
+	// 	printf("Failed to start disconnect, return code %d\n", rc);
+	// 	exit(EXIT_FAILURE);
+	// }
 }
 
 void onSend(void* context, MQTTAsync_successData* response)
@@ -190,14 +267,14 @@ void onSend(void* context, MQTTAsync_successData* response)
 	int rc;
 
 	printf("Message with token value %d delivery confirmed\n", response->token);
-	opts.onSuccess = onDisconnect;
-	opts.onFailure = onDisconnectFailure;
-	opts.context = client;
-	if ((rc = MQTTAsync_disconnect(client, &opts)) != MQTTASYNC_SUCCESS)
-	{
-		printf("Failed to start disconnect, return code %d\n", rc);
-		exit(EXIT_FAILURE);
-	}
+	// opts.onSuccess = onDisconnect;
+	// opts.onFailure = onDisconnectFailure;
+	// opts.context = client;
+	// if ((rc = MQTTAsync_disconnect(client, &opts)) != MQTTASYNC_SUCCESS)
+	// {
+	// 	printf("Failed to start disconnect, return code %d\n", rc);
+	// 	exit(EXIT_FAILURE);
+	// }
 }
 
 
@@ -236,7 +313,9 @@ int messageArrived(void* context, char* topicName, int topicLen, MQTTAsync_messa
 	return 1;
 }
 
-int connect_mqtt() {
+// 修改后的 connect_mqtt 函数，接受设备名作为参数 -- add by Miao ZiXiang
+
+int connect_mqtt(char *device_name, MQTTAsync *client) {
     int rc = 0;
 
     // 查询设备信息
@@ -246,7 +325,7 @@ int connect_mqtt() {
     char topic[200];
     int qos;
 
-    rc = query_device_info("LightSwitch", product_key, device_secret, address, topic, &qos);
+    rc = query_device_info(device_name, product_key, device_secret, address, topic, &qos);
     if (rc != SQLITE_OK) {
         printf("Failed to query device info, return code %d\n", rc);
         return rc;
@@ -263,10 +342,9 @@ int connect_mqtt() {
     char username[65] = {0};
     char password[65] = {0};
 
-    MQTTAsync client;
     MQTTAsync_connectOptions conn_opts = MQTTAsync_connectOptions_initializer;
 
-    if ((rc = aiotMqttSign(product_key, "LightSwitch", device_secret, clientId, username, password) < 0)) {
+    if ((rc = aiotMqttSign(product_key, device_name, device_secret, clientId, username, password)) < 0) {
         printf("aiotMqttSign -%0x4x\n", -rc);
         return -1;
     }
@@ -274,12 +352,12 @@ int connect_mqtt() {
     printf("username: %s\n", username);
     printf("password: %s\n", password);
 
-    if ((rc = MQTTAsync_create(&client, address, clientId, MQTTCLIENT_PERSISTENCE_NONE, NULL)) != MQTTASYNC_SUCCESS) {
+    if ((rc = MQTTAsync_create(client, address, clientId, MQTTCLIENT_PERSISTENCE_NONE, NULL)) != MQTTASYNC_SUCCESS) {
         printf("Failed to create client object, return code %d\n", rc);
         return rc;
     }
 
-    if ((rc = MQTTAsync_setCallbacks(client, NULL, connlost, messageArrived, NULL)) != MQTTASYNC_SUCCESS) {
+    if ((rc = MQTTAsync_setCallbacks(*client, NULL, connlost, messageArrived, NULL)) != MQTTASYNC_SUCCESS) {
         printf("Failed to set callback, return code %d\n", rc);
         return rc;
     }
@@ -288,11 +366,11 @@ int connect_mqtt() {
     conn_opts.cleansession = 1;
     conn_opts.onSuccess = onConnect;
     conn_opts.onFailure = onConnectFailure;
-    conn_opts.context = client;
+    conn_opts.context = *client;
     conn_opts.username = username;
     conn_opts.password = password;
 
-    if ((rc = MQTTAsync_connect(client, &conn_opts)) != MQTTASYNC_SUCCESS) {
+    if ((rc = MQTTAsync_connect(*client, &conn_opts)) != MQTTASYNC_SUCCESS) {
         printf("Failed to start connect, return code %d\n", rc);
         return rc;
     }
@@ -301,13 +379,32 @@ int connect_mqtt() {
          "on topic %s for client\n",
          PAYLOAD, topic);
 
-    while (!finished)
-        #if defined(_WIN32)
-            Sleep(100);
-        #else
-            usleep(10000L);
-        #endif
+    // while (!finished)
+    //     #if defined(_WIN32)
+    //         Sleep(100);
+    //     #else
+    //         usleep(10000L);
+    //     #endif
 
-    MQTTAsync_destroy(&client);
     return rc;
-} // -- modify by Miao Zixiang
+} // -- modified by Miao Zixiang
+
+ // -- added by Miao ZiXiang
+int disconnect_mqtt(MQTTAsync *client) {
+    int rc = 0;
+    MQTTAsync_disconnectOptions opts = MQTTAsync_disconnectOptions_initializer;
+    opts.onSuccess = onDisconnect;
+    opts.onFailure = onDisconnectFailure;
+    opts.context = *client;
+
+    if (client == NULL) {
+        printf("Client is NULL\n");
+        //return MQTTASYNC_BAD_CLIENT_HANDLE;
+    }
+
+    rc = MQTTAsync_disconnect(client, &opts);
+    if (rc != MQTTASYNC_SUCCESS) {
+        printf("Failed to start disconnect, return code %d\n", rc);
+    }
+    return rc;
+}

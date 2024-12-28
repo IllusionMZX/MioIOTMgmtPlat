@@ -243,6 +243,9 @@ extern lv_obj_t * ui_Dropdown1;
 void ui_event_BtnConnect(lv_event_t * e);
 extern lv_obj_t * ui_BtnConnect;
 extern lv_obj_t * ui_Label2;
+void ui_event_BtnDisConnect(lv_event_t * e);
+extern lv_obj_t * ui_BtnDisConnect;
+extern lv_obj_t * ui_Label12;
 // SCREEN: ui_IOT_S10
 void ui_IOT_S10_screen_init(void);
 void ui_event_IOT_S10(lv_event_t * e);
@@ -269,6 +272,7 @@ void ui_event_Spinner2(lv_event_t * e);
 extern lv_obj_t * ui_Spinner2;
 extern lv_obj_t * ui____initial_actions0;
 
+static void update_ui_async(void * task);
 
 LV_IMG_DECLARE(ui_img_img_bg_1_png);    // assets/IMG_BG_1.png
 LV_IMG_DECLARE(ui_img_iot_png);    // assets/iot.png

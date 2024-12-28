@@ -168,9 +168,9 @@ void ui_IOT_S9_screen_init(void)
 
 
     ui_BtnConnect = lv_btn_create(ui_IOT_S9);
-    lv_obj_set_width(ui_BtnConnect, 100);
+    lv_obj_set_width(ui_BtnConnect, 110);
     lv_obj_set_height(ui_BtnConnect, 50);
-    lv_obj_set_x(ui_BtnConnect, 0);
+    lv_obj_set_x(ui_BtnConnect, -70);
     lv_obj_set_y(ui_BtnConnect, 150);
     lv_obj_set_align(ui_BtnConnect, LV_ALIGN_CENTER);
     lv_obj_add_flag(ui_BtnConnect, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
@@ -187,9 +187,30 @@ void ui_IOT_S9_screen_init(void)
     lv_obj_set_style_text_opa(ui_Label2, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_font(ui_Label2, &lv_font_montserrat_18, LV_PART_MAIN | LV_STATE_DEFAULT);
 
+    ui_BtnDisConnect = lv_btn_create(ui_IOT_S9);
+    lv_obj_set_width(ui_BtnDisConnect, 110);
+    lv_obj_set_height(ui_BtnDisConnect, 50);
+    lv_obj_set_x(ui_BtnDisConnect, 70);
+    lv_obj_set_y(ui_BtnDisConnect, 150);
+    lv_obj_set_align(ui_BtnDisConnect, LV_ALIGN_CENTER);
+    lv_obj_add_flag(ui_BtnDisConnect, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
+    lv_obj_clear_flag(ui_BtnDisConnect, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_set_style_bg_color(ui_BtnDisConnect, lv_color_hex(0xEE8E23), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui_BtnDisConnect, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    ui_Label12 = lv_label_create(ui_BtnDisConnect);
+    lv_obj_set_width(ui_Label12, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_Label12, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_align(ui_Label12, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_Label12, "Disconnect");
+    lv_obj_set_style_text_color(ui_Label12, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_opa(ui_Label12, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_font(ui_Label12, &lv_font_montserrat_18, LV_PART_MAIN | LV_STATE_DEFAULT);
+
     lv_obj_add_event_cb(ui_Panel_Return5, ui_event_Panel_Return5, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_Panel_Home5, ui_event_Panel_Home5, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_BtnConnect, ui_event_BtnConnect, LV_EVENT_ALL, NULL);
+    lv_obj_add_event_cb(ui_BtnDisConnect, ui_event_BtnDisConnect, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_IOT_S9, ui_event_IOT_S9, LV_EVENT_ALL, NULL);
 
 }
