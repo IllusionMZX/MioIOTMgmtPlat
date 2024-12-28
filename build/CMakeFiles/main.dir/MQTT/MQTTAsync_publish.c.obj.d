@@ -20,6 +20,10 @@ CMakeFiles/main.dir/MQTT/MQTTAsync_publish.c.obj: \
  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/mm_malloc.h \
  C:/msys64/mingw64/include/errno.h C:/msys64/mingw64/include/string.h \
  C:/msys64/mingw64/include/sec_api/string_s.h \
+ C:/msys64/mingw64/include/sqlite3.h \
+ C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdarg.h \
+ C:/msys64/mingw64/include/stdarg.h \
+ C:/msys64/mingw64/include/_mingw_stdarg.h \
  E:\Code_Project\VScode\C_Cpp\LVGL\lv_port_pc_eclipse-release-v8.3\MQTT\MQTTAsync_publish.h \
  C:/msys64/mingw64/include/MQTTAsync.h \
  C:/msys64/mingw64/include/MQTTExportDeclarations.h \
@@ -29,9 +33,6 @@ CMakeFiles/main.dir/MQTT/MQTTAsync_publish.c.obj: \
  C:/msys64/mingw64/include/MQTTClientPersistence.h \
  C:/msys64/mingw64/include/windows.h \
  C:/msys64/mingw64/include/sdkddkver.h C:/msys64/mingw64/include/excpt.h \
- C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdarg.h \
- C:/msys64/mingw64/include/stdarg.h \
- C:/msys64/mingw64/include/_mingw_stdarg.h \
  C:/msys64/mingw64/include/windef.h \
  C:/msys64/mingw64/include/winapifamily.h \
  C:/msys64/mingw64/include/minwindef.h \
