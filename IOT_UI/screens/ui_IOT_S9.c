@@ -50,7 +50,7 @@ void ui_IOT_S9_screen_init(void)
     lv_obj_set_x(ui_Label_Ony_MQTT2, 0);
     lv_obj_set_y(ui_Label_Ony_MQTT2, 70);
     lv_obj_set_align(ui_Label_Ony_MQTT2, LV_ALIGN_TOP_MID);
-    lv_label_set_text(ui_Label_Ony_MQTT2, "Only Local DataBase is possible");
+    lv_label_set_text(ui_Label_Ony_MQTT2, "Only Local DataBase is possible.\nMQTT Device List information\nis stored in SQLite");
     lv_obj_set_style_text_color(ui_Label_Ony_MQTT2, lv_color_hex(0x7F848F), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_opa(ui_Label_Ony_MQTT2, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_align(ui_Label_Ony_MQTT2, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -60,7 +60,7 @@ void ui_IOT_S9_screen_init(void)
     lv_obj_set_height(ui_Panel_List_MQTT2, 84);
     lv_obj_set_width(ui_Panel_List_MQTT2, lv_pct(100));
     lv_obj_set_x(ui_Panel_List_MQTT2, 0);
-    lv_obj_set_y(ui_Panel_List_MQTT2, 70);
+    lv_obj_set_y(ui_Panel_List_MQTT2, 110);
     lv_obj_set_align(ui_Panel_List_MQTT2, LV_ALIGN_TOP_MID);
     lv_obj_clear_flag(ui_Panel_List_MQTT2, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
     lv_obj_set_style_bg_color(ui_Panel_List_MQTT2, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -75,14 +75,14 @@ void ui_IOT_S9_screen_init(void)
     lv_obj_set_x(ui_Label_MQTT5, 110);
     lv_obj_set_y(ui_Label_MQTT5, 6);
     lv_obj_set_align(ui_Label_MQTT5, LV_ALIGN_LEFT_MID);
-    lv_label_set_text(ui_Label_MQTT5, "Local SQLite");
+    lv_label_set_text(ui_Label_MQTT5, "In Local SQLite");
     lv_obj_set_style_text_color(ui_Label_MQTT5, lv_color_hex(0x1D222A), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_opa(ui_Label_MQTT5, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_align(ui_Label_MQTT5, LV_TEXT_ALIGN_LEFT, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_font(ui_Label_MQTT5, &lv_font_montserrat_22, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_IMG_MQTT2 = lv_img_create(ui_Panel_List_MQTT2);
-    lv_img_set_src(ui_IMG_MQTT2, &ui_img_database_png);
+    lv_img_set_src(ui_IMG_MQTT2, &ui_img_mqtt_png);
     lv_obj_set_width(ui_IMG_MQTT2, 48);
     lv_obj_set_height(ui_IMG_MQTT2, LV_SIZE_CONTENT);    /// 48
     lv_obj_set_x(ui_IMG_MQTT2, 45);
@@ -92,7 +92,7 @@ void ui_IOT_S9_screen_init(void)
     lv_obj_clear_flag(ui_IMG_MQTT2, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
 
     ui_Image3 = lv_img_create(ui_Panel_List_MQTT2);
-    lv_img_set_src(ui_Image3, &ui_img_circlefillgreen_png);
+    lv_img_set_src(ui_Image3, &ui_img_circlefillred_png);
     lv_obj_set_width(ui_Image3, 20);
     lv_obj_set_height(ui_Image3, 20);
     lv_obj_set_x(ui_Image3, -130);
@@ -138,7 +138,7 @@ void ui_IOT_S9_screen_init(void)
     lv_obj_set_width(ui_Dropdown1, 250);
     lv_obj_set_height(ui_Dropdown1, LV_SIZE_CONTENT);    /// 1
     lv_obj_set_x(ui_Dropdown1, 0);
-    lv_obj_set_y(ui_Dropdown1, -60);
+    lv_obj_set_y(ui_Dropdown1, -10);
     lv_obj_set_align(ui_Dropdown1, LV_ALIGN_CENTER);
     lv_obj_add_flag(ui_Dropdown1, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
 

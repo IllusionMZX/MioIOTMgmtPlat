@@ -5,6 +5,7 @@
 
 #include "ui.h"
 #include "ui_helpers.h"
+#include "../MQTT/MQTTAsync_publish.h"
 
 ///////////////////// VARIABLES ////////////////////
 void FadeOn_Animation(lv_obj_t * TargetObject, int delay);
@@ -1055,10 +1056,19 @@ void ui_event_Panel_Home5(lv_event_t * e)
 }
 void ui_event_BtnConnect(lv_event_t * e)
 {
-    lv_event_code_t event_code = lv_event_get_code(e);
-    lv_obj_t * target = lv_event_get_target(e);
-    if(event_code == LV_EVENT_CLICKED) {
-        _ui_screen_change(&ui_IOT_S10, LV_SCR_LOAD_ANIM_FADE_ON, 0, 400, &ui_IOT_S10_screen_init);
+    lv_event_code_t code = lv_event_get_code(e);
+    lv_obj_t * btn = lv_event_get_target(e);
+
+    if(code == LV_EVENT_CLICKED) {
+        // 调用MQTT连接函数
+        int rc = connect_mqtt();
+        if (rc == MQTTASYNC_SUCCESS) {
+            // 连接成功，将圆圈图标颜色设置为绿色
+            lv_img_set_src(ui_Image3, &ui_img_circlefillgreen_png);
+        } else {
+            // 连接失败，将圆圈图标颜色设置为红色
+            lv_img_set_src(ui_Image3, &ui_img_circlefillred_png);
+        }
     }
 }
 void ui_event_IOT_S10(lv_event_t * e)

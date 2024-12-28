@@ -286,7 +286,7 @@ LV_IMG_DECLARE(ui_img_http_png);    // assets/http.png
 LV_IMG_DECLARE(ui_img_ok_png);    // assets/ok.png
 LV_IMG_DECLARE(ui_img_database_png);    // assets/database.png
 LV_IMG_DECLARE(ui_img_circlefillgreen_png);    // assets/circlefillgreen.png
-
+LV_IMG_DECLARE(ui_img_circlefillred_png);    // assets/circlefillred.png
 
 
 LV_FONT_DECLARE(ui_font_Big_Number);

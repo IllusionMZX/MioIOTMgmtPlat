@@ -261,6 +261,30 @@ IOT_UI/images/ui_img_circlefillgreen_png.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/IOT_UI/images/ui_img_circlefillgreen_png.c.s
 .PHONY : IOT_UI/images/ui_img_circlefillgreen_png.c.s
 
+IOT_UI/images/ui_img_circlefillred_png.obj: IOT_UI/images/ui_img_circlefillred_png.c.obj
+.PHONY : IOT_UI/images/ui_img_circlefillred_png.obj
+
+# target to build an object file
+IOT_UI/images/ui_img_circlefillred_png.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/IOT_UI/images/ui_img_circlefillred_png.c.obj
+.PHONY : IOT_UI/images/ui_img_circlefillred_png.c.obj
+
+IOT_UI/images/ui_img_circlefillred_png.i: IOT_UI/images/ui_img_circlefillred_png.c.i
+.PHONY : IOT_UI/images/ui_img_circlefillred_png.i
+
+# target to preprocess a source file
+IOT_UI/images/ui_img_circlefillred_png.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/IOT_UI/images/ui_img_circlefillred_png.c.i
+.PHONY : IOT_UI/images/ui_img_circlefillred_png.c.i
+
+IOT_UI/images/ui_img_circlefillred_png.s: IOT_UI/images/ui_img_circlefillred_png.c.s
+.PHONY : IOT_UI/images/ui_img_circlefillred_png.s
+
+# target to generate assembly for a file
+IOT_UI/images/ui_img_circlefillred_png.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/IOT_UI/images/ui_img_circlefillred_png.c.s
+.PHONY : IOT_UI/images/ui_img_circlefillred_png.c.s
+
 IOT_UI/images/ui_img_database_png.obj: IOT_UI/images/ui_img_database_png.c.obj
 .PHONY : IOT_UI/images/ui_img_database_png.obj
 
@@ -884,6 +908,54 @@ IOT_UI/ui_helpers.s: IOT_UI/ui_helpers.c.s
 IOT_UI/ui_helpers.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/IOT_UI/ui_helpers.c.s
 .PHONY : IOT_UI/ui_helpers.c.s
+
+MQTT/MQTTAsync_publish.obj: MQTT/MQTTAsync_publish.c.obj
+.PHONY : MQTT/MQTTAsync_publish.obj
+
+# target to build an object file
+MQTT/MQTTAsync_publish.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/MQTT/MQTTAsync_publish.c.obj
+.PHONY : MQTT/MQTTAsync_publish.c.obj
+
+MQTT/MQTTAsync_publish.i: MQTT/MQTTAsync_publish.c.i
+.PHONY : MQTT/MQTTAsync_publish.i
+
+# target to preprocess a source file
+MQTT/MQTTAsync_publish.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/MQTT/MQTTAsync_publish.c.i
+.PHONY : MQTT/MQTTAsync_publish.c.i
+
+MQTT/MQTTAsync_publish.s: MQTT/MQTTAsync_publish.c.s
+.PHONY : MQTT/MQTTAsync_publish.s
+
+# target to generate assembly for a file
+MQTT/MQTTAsync_publish.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/MQTT/MQTTAsync_publish.c.s
+.PHONY : MQTT/MQTTAsync_publish.c.s
+
+MQTT/aiot_mqtt_sign.obj: MQTT/aiot_mqtt_sign.c.obj
+.PHONY : MQTT/aiot_mqtt_sign.obj
+
+# target to build an object file
+MQTT/aiot_mqtt_sign.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/MQTT/aiot_mqtt_sign.c.obj
+.PHONY : MQTT/aiot_mqtt_sign.c.obj
+
+MQTT/aiot_mqtt_sign.i: MQTT/aiot_mqtt_sign.c.i
+.PHONY : MQTT/aiot_mqtt_sign.i
+
+# target to preprocess a source file
+MQTT/aiot_mqtt_sign.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/MQTT/aiot_mqtt_sign.c.i
+.PHONY : MQTT/aiot_mqtt_sign.c.i
+
+MQTT/aiot_mqtt_sign.s: MQTT/aiot_mqtt_sign.c.s
+.PHONY : MQTT/aiot_mqtt_sign.s
+
+# target to generate assembly for a file
+MQTT/aiot_mqtt_sign.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/MQTT/aiot_mqtt_sign.c.s
+.PHONY : MQTT/aiot_mqtt_sign.c.s
 
 lv_drivers/display/GC9A01.obj: lv_drivers/display/GC9A01.c.obj
 .PHONY : lv_drivers/display/GC9A01.obj
@@ -11710,6 +11782,9 @@ help:
 	@echo ... IOT_UI/images/ui_img_circlefillgreen_png.obj
 	@echo ... IOT_UI/images/ui_img_circlefillgreen_png.i
 	@echo ... IOT_UI/images/ui_img_circlefillgreen_png.s
+	@echo ... IOT_UI/images/ui_img_circlefillred_png.obj
+	@echo ... IOT_UI/images/ui_img_circlefillred_png.i
+	@echo ... IOT_UI/images/ui_img_circlefillred_png.s
 	@echo ... IOT_UI/images/ui_img_database_png.obj
 	@echo ... IOT_UI/images/ui_img_database_png.i
 	@echo ... IOT_UI/images/ui_img_database_png.s
@@ -11788,6 +11863,12 @@ help:
 	@echo ... IOT_UI/ui_helpers.obj
 	@echo ... IOT_UI/ui_helpers.i
 	@echo ... IOT_UI/ui_helpers.s
+	@echo ... MQTT/MQTTAsync_publish.obj
+	@echo ... MQTT/MQTTAsync_publish.i
+	@echo ... MQTT/MQTTAsync_publish.s
+	@echo ... MQTT/aiot_mqtt_sign.obj
+	@echo ... MQTT/aiot_mqtt_sign.i
+	@echo ... MQTT/aiot_mqtt_sign.s
 	@echo ... lv_drivers/display/GC9A01.obj
 	@echo ... lv_drivers/display/GC9A01.i
 	@echo ... lv_drivers/display/GC9A01.s
