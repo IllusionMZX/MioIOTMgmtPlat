@@ -23139,34 +23139,6 @@ CMakeFiles/main.dir/main.c.obj: E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_ecl
   E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/IOT_UI/ui_helpers.h \
   E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lv_drivers/sdl/sdl.h \
   E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lv_drivers/sdl/sdl_common.h \
-  E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/demos/lv_demos.h \
-  E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/examples/anim/lv_example_anim.h \
-  E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/examples/event/lv_example_event.h \
-  E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/examples/get_started/lv_example_get_started.h \
-  E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/examples/layouts/flex/lv_example_flex.h \
-  E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/examples/layouts/grid/lv_example_grid.h \
-  E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/examples/layouts/lv_example_layout.h \
-  E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/examples/libs/bmp/lv_example_bmp.h \
-  E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/examples/libs/ffmpeg/lv_example_ffmpeg.h \
-  E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/examples/libs/freetype/lv_example_freetype.h \
-  E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/examples/libs/gif/lv_example_gif.h \
-  E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/examples/libs/lv_example_libs.h \
-  E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/examples/libs/png/lv_example_png.h \
-  E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/examples/libs/qrcode/lv_example_qrcode.h \
-  E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/examples/libs/rlottie/lv_example_rlottie.h \
-  E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/examples/libs/sjpg/lv_example_sjpg.h \
-  E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/examples/lv_examples.h \
-  E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/examples/others/fragment/lv_example_fragment.h \
-  E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/examples/others/gridnav/lv_example_gridnav.h \
-  E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/examples/others/ime/lv_example_ime_pinyin.h \
-  E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/examples/others/imgfont/lv_example_imgfont.h \
-  E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/examples/others/lv_example_others.h \
-  E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/examples/others/monkey/lv_example_monkey.h \
-  E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/examples/others/msg/lv_example_msg.h \
-  E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/examples/others/snapshot/lv_example_snapshot.h \
-  E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/examples/scroll/lv_example_scroll.h \
-  E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/examples/styles/lv_example_style.h \
-  E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/examples/widgets/lv_example_widgets.h \
   E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/lvgl.h \
   E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/src/core/lv_disp.h \
   E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/src/core/lv_event.h \
@@ -23454,8 +23426,6 @@ C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512fp16intrin.h:
 
 C:/msys64/mingw64/include/psdk_inc/_fd_types.h:
 
-E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/examples/libs/ffmpeg/lv_example_ffmpeg.h:
-
 E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/src/draw/lv_draw_mask.h:
 
 E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/src/core/lv_obj_scroll.c:
@@ -23493,8 +23463,6 @@ C:/msys64/mingw64/include/stdio.h:
 E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/src/core/lv_event.h:
 
 C:/msys64/mingw64/include/pshpack1.h:
-
-E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/examples/libs/bmp/lv_example_bmp.h:
 
 C:/msys64/mingw64/include/sdks/_mingw_ddk.h:
 
@@ -23621,8 +23589,6 @@ E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/src/core/
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512vbmiintrin.h:
 
 E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/mouse_cursor_icon.c:
-
-E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/examples/anim/lv_example_anim.h:
 
 E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/src/core/lv_refr.h:
 
@@ -23772,8 +23738,6 @@ E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/src/extra
 
 E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/src/extra/widgets/animimg/lv_animimg.h:
 
-E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/examples/libs/rlottie/lv_example_rlottie.h:
-
 E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/src/extra/widgets/menu/lv_menu.h:
 
 E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/src/extra/widgets/calendar/lv_calendar.h:
@@ -23857,8 +23821,6 @@ E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/src/lv_co
 E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/src/hal/lv_hal_indev.h:
 
 E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/src/hal/lv_hal_tick.h:
-
-E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/examples/others/monkey/lv_example_monkey.h:
 
 E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/src/lv_api_map.h:
 
@@ -23998,8 +23960,6 @@ E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/IOT_UI/images/
 
 E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/IOT_UI/images/ui_img_socket_png.c:
 
-E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/examples/libs/gif/lv_example_gif.h:
-
 E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/IOT_UI/images/ui_img_sound_png.c:
 
 E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/IOT_UI/screens/ui_IOT_S1.c:
@@ -24128,8 +24088,6 @@ C:/msys64/mingw64/include/winscard.h:
 
 C:/msys64/mingw64/include/fibersapi.h:
 
-E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/examples/scroll/lv_example_scroll.h:
-
 C:/msys64/mingw64/include/pshpack8.h:
 
 C:/msys64/mingw64/include/intrin.h:
@@ -24214,8 +24172,6 @@ C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx2intrin.h:
 
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/tbmintrin.h:
 
-E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/examples/layouts/lv_example_layout.h:
-
 C:/msys64/mingw64/include/mmiscapi2.h:
 
 C:/msys64/mingw64/include/securitybaseapi.h:
@@ -24255,8 +24211,6 @@ C:/msys64/mingw64/include/swprintf.inl:
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/vaesintrin.h:
 
 C:/msys64/mingw64/include/oleidl.h:
-
-E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/examples/lv_examples.h:
 
 C:/msys64/mingw64/include/playsoundapi.h:
 
@@ -24468,8 +24422,6 @@ C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512vlintrin.h:
 
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512vnniintrin.h:
 
-E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/examples/event/lv_example_event.h:
-
 E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/src/extra/libs/qrcode/qrcodegen.c:
 
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512vnnivlintrin.h:
@@ -24539,8 +24491,6 @@ E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/src/draw/
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/mwaitintrin.h:
 
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/mwaitxintrin.h:
-
-E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/examples/others/ime/lv_example_ime_pinyin.h:
 
 C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/prfchwintrin.h:
 
@@ -24643,8 +24593,6 @@ E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lv_drivers/ind
 C:/msys64/mingw64/include/SDL2/SDL.h:
 
 C:/msys64/mingw64/include/SDL2/SDL_assert.h:
-
-E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/examples/libs/sjpg/lv_example_sjpg.h:
 
 C:/msys64/mingw64/include/SDL2/SDL_atomic.h:
 
@@ -24816,8 +24764,6 @@ E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/src/draw/
 
 E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/src/draw/nxp/vglite/lv_draw_vglite_arc.h:
 
-E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/examples/others/snapshot/lv_example_snapshot.h:
-
 E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/src/draw/nxp/vglite/lv_draw_vglite_blend.c:
 
 E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/src/draw/nxp/vglite/lv_draw_vglite_blend.h:
@@ -24847,8 +24793,6 @@ E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/src/draw/
 E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/src/draw/sdl/lv_draw_sdl.h:
 
 E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/src/draw/sdl/lv_draw_sdl_label.c:
-
-E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/examples/others/fragment/lv_example_fragment.h:
 
 E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/src/draw/sdl/lv_draw_sdl_mask.c:
 
@@ -25037,31 +24981,3 @@ E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/src/widge
 E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/src/widgets/lv_textarea.c:
 
 E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/main.c:
-
-E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/demos/lv_demos.h:
-
-E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/examples/get_started/lv_example_get_started.h:
-
-E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/examples/layouts/flex/lv_example_flex.h:
-
-E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/examples/layouts/grid/lv_example_grid.h:
-
-E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/examples/libs/qrcode/lv_example_qrcode.h:
-
-E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/examples/libs/freetype/lv_example_freetype.h:
-
-E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/examples/libs/lv_example_libs.h:
-
-E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/examples/libs/png/lv_example_png.h:
-
-E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/examples/others/gridnav/lv_example_gridnav.h:
-
-E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/examples/others/imgfont/lv_example_imgfont.h:
-
-E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/examples/others/lv_example_others.h:
-
-E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/examples/others/msg/lv_example_msg.h:
-
-E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/examples/styles/lv_example_style.h:
-
-E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/examples/widgets/lv_example_widgets.h:

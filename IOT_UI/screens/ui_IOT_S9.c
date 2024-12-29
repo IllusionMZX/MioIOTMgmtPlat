@@ -40,7 +40,7 @@ void ui_IOT_S9_screen_init(void)
     lv_obj_set_x(ui_Label__Connect2, 0);
     lv_obj_set_y(ui_Label__Connect2, 15);
     lv_obj_set_align(ui_Label__Connect2, LV_ALIGN_TOP_MID);
-    lv_label_set_text(ui_Label__Connect2, "Select Device\nto connect");
+    lv_label_set_text(ui_Label__Connect2, "Select Device to\nconnect or disconnect");
     lv_obj_set_style_text_color(ui_Label__Connect2, lv_color_hex(0x0B1019), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_opa(ui_Label__Connect2, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_align(ui_Label__Connect2, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN | LV_STATE_DEFAULT);

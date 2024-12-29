@@ -145,6 +145,8 @@ lv_obj_t * ui_Label6;
 lv_obj_t * ui_TabPage3;
 lv_obj_t * ui_Label7;
 lv_obj_t * ui_TabPage4;
+lv_obj_t * ui_Image4;
+void ui_event_Label8(lv_event_t * e);
 lv_obj_t * ui_Label8;
 lv_obj_t * ui_TabPage5;
 lv_obj_t * ui_Label9;
@@ -925,6 +927,36 @@ void ui_event_IOT_S2(lv_event_t * e)
         FadeOff_Animation(ui_Label_Enter_Amount1, 250);
     }
 }
+
+void ui_event_Label8(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+    if(event_code == LV_EVENT_CLICKED) {
+        // 获取 Label8 的文本内容
+        const char * label_text = lv_label_get_text(ui_Label8);
+
+        if (strcmp(label_text, "NO Device") == 0) {
+            // 弹出对话框显示 "Please set up a connect"
+            lv_obj_t * msgbox = lv_msgbox_create(NULL, "Please set up a connect", NULL, NULL, true);
+            lv_msgbox_get_close_btn(msgbox);
+            lv_obj_align(msgbox, LV_ALIGN_CENTER, 0, 0);
+        } else {
+            // 获取 ui_Image4 的图像资源
+            const void * img_src = lv_img_get_src(ui_Image4);
+
+            // 比较图像资源
+            if (img_src == (const void *)&ui_img_circlefillgreen_png) {
+                _ui_screen_change(&ui_IOT_S12, LV_SCR_LOAD_ANIM_FADE_ON, 10, 400, &ui_IOT_S12_screen_init);
+            } else if (img_src == (const void *)&ui_img_circlefillred_png){
+                // 弹出对话框显示 "The connection has been disconnected"
+                lv_obj_t * msgbox = lv_msgbox_create(NULL, "The connection\nhas been disconnected", NULL, NULL, true);
+                lv_msgbox_get_close_btn(msgbox);
+                lv_obj_align(msgbox, LV_ALIGN_CENTER, 0, 0);
+            }
+        }
+    }
+}
 void ui_event_Button5(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
@@ -1113,7 +1145,29 @@ void ui_event_BTN_Next_3(lv_event_t * e)
     lv_event_code_t event_code = lv_event_get_code(e);
     lv_obj_t * target = lv_event_get_target(e);
     if(event_code == LV_EVENT_CLICKED) {
-        _ui_screen_change(&ui_IOT_S6, LV_SCR_LOAD_ANIM_FADE_ON, 50, 400, &ui_IOT_S6_screen_init);
+        // 获取 ui_Image3 的图像资源
+        const void * img_src = lv_img_get_src(ui_Image3);
+
+        // 比较图像资源
+        if (img_src == (const void *)&ui_img_circlefillgreen_png) {
+            // 获取选中的设备名
+            char selected_device[32];
+            lv_dropdown_get_selected_str(ui_Dropdown1, selected_device, sizeof(selected_device));
+
+            if (selected_device[0] != '\0'){
+                lv_label_set_text(ui_Label8, selected_device); // 根据 S9 中选中设备的名字修改 Label8
+                lv_img_set_src(ui_Image4, &ui_img_circlefillgreen_png); // 设置 ui_Image4 的图像为 ui_img_circlefillgreen_png
+                _ui_screen_change(&ui_IOT_S6, LV_SCR_LOAD_ANIM_FADE_ON, 50, 400, &ui_IOT_S6_screen_init);
+            }
+        } else if (img_src == (const void *)&ui_img_circlefillred_png) {
+            char selected_device[32];
+            lv_dropdown_get_selected_str(ui_Dropdown1, selected_device, sizeof(selected_device));
+            if (selected_device[0] != '\0'){
+                lv_label_set_text(ui_Label8, selected_device);
+                lv_img_set_src(ui_Image4, &ui_img_circlefillred_png); // 设置 ui_Image4 的图像为 ui_img_circlefillred_png
+                _ui_screen_change(&ui_IOT_S11, LV_SCR_LOAD_ANIM_FADE_ON, 50, 400, &ui_IOT_S11_screen_init);
+            }
+        }
     }
 }
 

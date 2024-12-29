@@ -133,6 +133,8 @@ extern lv_obj_t * ui_Label6;
 extern lv_obj_t * ui_TabPage3;
 extern lv_obj_t * ui_Label7;
 extern lv_obj_t * ui_TabPage4;
+extern lv_obj_t * ui_Image4;
+void ui_event_Label8(lv_event_t * e);
 extern lv_obj_t * ui_Label8;
 extern lv_obj_t * ui_TabPage5;
 extern lv_obj_t * ui_Label9;
