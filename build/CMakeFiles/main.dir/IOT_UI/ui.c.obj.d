@@ -22,10 +22,6 @@ CMakeFiles/main.dir/IOT_UI/ui.c.obj: \
  C:/msys64/mingw64/include/pthread_time.h \
  C:/msys64/mingw64/include/pthread_compat.h \
  C:/msys64/mingw64/include/pthread_unistd.h \
- C:/msys64/mingw64/include/sqlite3.h \
- C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdarg.h \
- C:/msys64/mingw64/include/stdarg.h \
- C:/msys64/mingw64/include/_mingw_stdarg.h \
  E:\Code_Project\VScode\C_Cpp\LVGL\lv_port_pc_eclipse-release-v8.3\IOT_UI\ui.h \
  E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/lvgl.h \
  E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/src/misc/lv_log.h \
@@ -48,6 +44,9 @@ CMakeFiles/main.dir/IOT_UI/ui.c.obj: \
  E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/src/misc/lv_anim.h \
  E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/src/misc/lv_printf.h \
  C:/msys64/mingw64/include/inttypes.h \
+ C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdarg.h \
+ C:/msys64/mingw64/include/stdarg.h \
+ C:/msys64/mingw64/include/_mingw_stdarg.h \
  E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/src/hal/lv_hal.h \
  E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/src/hal/lv_hal_disp.h \
  E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/lvgl/src/hal/lv_hal.h \

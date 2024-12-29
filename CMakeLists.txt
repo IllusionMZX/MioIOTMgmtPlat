@@ -6,8 +6,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR})
 
-file(GLOB_RECURSE INCLUDES "lv_drivers/*.h" "lvgl/demos/*.h" "IOT_UI/*.h" "MQTT/*.h" "lvgl/examples/*.h" "lvgl/*.h"  "./*.h" )
-file(GLOB_RECURSE SOURCES  "lv_drivers/*.c" "lvgl/demos/*.c" "IOT_UI/*.c" "MQTT/*.c" "lvgl/examples/*.c" "lvgl/src/*.c" )
+file(GLOB_RECURSE INCLUDES "lv_drivers/*.h" "IOT_UI/*.h" "MQTT/*.h" "lvgl/*.h"  "./*.h" )
+file(GLOB_RECURSE SOURCES  "lv_drivers/*.c" "IOT_UI/*.c" "MQTT/*.c" "lvgl/src/*.c" )
 file(COPY SDL2.dll DESTINATION ../bin)
 
 SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)

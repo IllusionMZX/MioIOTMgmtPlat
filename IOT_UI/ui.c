@@ -4,19 +4,17 @@
 // LVGL version: 8.3.11
 // Project name: IOT
 
-// -- add by Miao Zixiang
-#include <pthread.h>
-#include <sqlite3.h>
+#include <pthread.h> // -- add by Miao Zixiang
 #include "ui.h"
 #include "ui_helpers.h"
+#include "ui_events.h"
 #include "../MQTT/MQTTAsync_publish.h"
 
+
+static MQTTAsync mqtt_client;
 static pthread_t connect_thread;
 static pthread_t disconnect_thread;
 static int is_connected = 0;
-
-int aiotMqttSign(const char *productKey, const char *deviceName, const char *deviceSecret,
-                     char clientId[150], char username[64], char password[65]);
 
 ///////////////////// VARIABLES ////////////////////
 void FadeOn_Animation(lv_obj_t * TargetObject, int delay);
@@ -268,6 +266,9 @@ lv_obj_t * ui_Label2;
 void ui_event_BtnDisConnect(lv_event_t * e);
 lv_obj_t * ui_BtnDisConnect;
 lv_obj_t * ui_Label12;
+void ui_event_BTN_Next_3(lv_event_t * e);
+lv_obj_t * ui_BTN_Next_3;
+lv_obj_t * ui_IMG_Arrow3;
 
 // SCREEN: ui_IOT_S10
 void ui_IOT_S10_screen_init(void);
@@ -293,6 +294,44 @@ lv_obj_t * ui_BtnConnect1;
 lv_obj_t * ui_Label1;
 void ui_event_Spinner2(lv_event_t * e);
 lv_obj_t * ui_Spinner2;
+
+// SCREEN: ui_IOT_S11
+void ui_IOT_S11_screen_init(void);
+void ui_event_IOT_S11(lv_event_t * e);
+lv_obj_t * ui_IOT_S11;
+lv_obj_t * ui_IMG_S5_BG1;
+lv_obj_t * ui_IMG_Ok_3;
+lv_obj_t * ui_IMG_Ok_4;
+lv_obj_t * ui_Label_Succesful1;
+lv_obj_t * ui_Label_press_contimue1;
+void ui_event_BTN_Next_1(lv_event_t * e);
+lv_obj_t * ui_BTN_Next_1;
+lv_obj_t * ui_IMG_Arrow2;
+
+
+// SCREEN: ui_IOT_S12
+void ui_IOT_S12_screen_init(void);
+void ui_event_IOT_S12(lv_event_t * e);
+lv_obj_t * ui_IOT_S12;
+lv_obj_t * ui_IMG_S2_Bg_17;
+lv_obj_t * ui_IMG_S2_Bg_18;
+lv_obj_t * ui_Label_Add_Device3;
+lv_obj_t * ui_Label_Want_to_add3;
+void ui_event_Panel_Return7(lv_event_t * e);
+lv_obj_t * ui_Panel_Return7;
+lv_obj_t * ui_Image_Return7;
+void ui_event_PanelLamp2(lv_event_t * e);
+lv_obj_t * ui_PanelLamp2;
+lv_obj_t * ui_ImageLamp2;
+void ui_event_Panel_Home7(lv_event_t * e);
+lv_obj_t * ui_Panel_Home7;
+lv_obj_t * ui_ImageHome7;
+lv_obj_t * ui_TextArea1;
+lv_obj_t * ui_Keyboard2;
+lv_obj_t * ui_ImageLight;
+void ui_event_BtnSendMessage(lv_event_t * e);
+lv_obj_t * ui_BtnSendMessage;
+lv_obj_t * ui_Label13;
 lv_obj_t * ui____initial_actions0;
 const lv_img_dsc_t * ui_imgset_img_bg_[1] = {&ui_img_img_bg_1_png};
 
@@ -1069,13 +1108,22 @@ void ui_event_Panel_Home5(lv_event_t * e)
     }
 }
 
+void ui_event_BTN_Next_3(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+    if(event_code == LV_EVENT_CLICKED) {
+        _ui_screen_change(&ui_IOT_S6, LV_SCR_LOAD_ANIM_FADE_ON, 50, 400, &ui_IOT_S6_screen_init);
+    }
+}
+
 // 连接线程函数 -- add by Miao Zixiang
 void *connect_thread_func(void *arg) {
     ConnectParams *params = (ConnectParams *)arg;
     char *device_name = params->device_name;
     MQTTAsync *client = params->client;
 
-    int rc = connect_mqtt(device_name, client);
+    int rc = connect_mqtt(device_name, &mqtt_client);
     if (rc == MQTTASYNC_SUCCESS) {
         // 连接成功，将圆圈图标颜色设置为绿色
         lv_img_set_src(ui_Image3, &ui_img_circlefillgreen_png);
@@ -1085,20 +1133,10 @@ void *connect_thread_func(void *arg) {
         lv_img_set_src(ui_Image3, &ui_img_circlefillred_png);
         is_connected = 0;
     }
-    lv_async_call(update_ui_async, NULL);
-    free(params);
-    pthread_exit(NULL);  // 明确退出线程
     return NULL;
 }
 void *disconnect_thread_func(void *arg) {
-    MQTTAsync *client = (MQTTAsync *) arg;
-    if (client == NULL) {
-        printf("Client is NULL\n");
-        pthread_exit(NULL);
-        return NULL;
-    }
-
-    int rc = disconnect_mqtt(client);
+    int rc = disconnect_mqtt(&mqtt_client);
     if (rc == MQTTASYNC_SUCCESS) {
         // 断开连接成功，将圆圈图标颜色设置为红色
         lv_img_set_src(ui_Image3, &ui_img_circlefillred_png);
@@ -1106,8 +1144,6 @@ void *disconnect_thread_func(void *arg) {
     } else {
         printf("Failed to disconnect, return code %d\n", rc);
     }
-    lv_async_call(update_ui_async, NULL);
-    pthread_exit(NULL);  // 明确退出线程
     return NULL;
 }
 void ui_event_BtnConnect(lv_event_t * e) {
@@ -1120,65 +1156,27 @@ void ui_event_BtnConnect(lv_event_t * e) {
             return;
         }
 
+        // 获取选中的设备名
         char selected_device[32];
         lv_dropdown_get_selected_str(ui_Dropdown1, selected_device, sizeof(selected_device));
 
-        if (selected_device[0] != '\0') {  
+        if (selected_device[0] != '\0') {  // 检查是否获取到有效的设备名
+            printf("Selected device: %s\n", selected_device);
+
+             // 创建参数结构体
             ConnectParams *params = (ConnectParams *)malloc(sizeof(ConnectParams));
             if (params == NULL) {
                 printf("Failed to allocate memory for ConnectParams\n");
                 return;
             }
             strncpy(params->device_name, selected_device, sizeof(params->device_name) - 1);
-            params->device_name[sizeof(params->device_name) - 1] = '\0';  
-
-            // 查询设备信息
-            char product_key[100];
-            char device_secret[100];
-            char address[200];
-            char topic[200];
-            int qos;
-
-            int rc = query_device_info(selected_device, product_key, device_secret, address, topic, &qos);
-            if (rc != SQLITE_OK) {
-                printf("Failed to query device info, return code %d\n", rc);
-                free(params);
-                return;
-            }
-
-            // 生成 MQTT 连接参数
-            char clientId[150] = {0};
-            char username[65] = {0};
-            char password[65] = {0};
-
-            if ((rc = aiotMqttSign(product_key, selected_device, device_secret, clientId, username, password)) < 0) {
-                printf("aiotMqttSign -%0x4x\n", -rc);
-                free(params);
-                return;
-            }
-
-            // 创建 MQTT 客户端实例
-            params->client = mqtt_client_create(address, clientId, username, password);
-            if (params->client == NULL) {
-                printf("Failed to create MQTT client\n");
-                free(params);
-                return;
-            }
-
-            // 添加连接参数到全局数组
-            if (add_connect_params(params) != 0) {
-                printf("Failed to add connect params\n");
-                MQTTAsync_destroy(*(params->client));
-                free(params);
-                return;
-            }
+            params->device_name[sizeof(params->device_name) - 1] = '\0';  // 确保字符串以 null 结尾
+            params->client = &mqtt_client;
 
             // 创建连接线程
             if (pthread_create(&connect_thread, NULL, connect_thread_func, params) != 0) {
                 printf("Failed to create connect thread\n");
-                remove_connect_params(selected_device);
-                MQTTAsync_destroy(*(params->client));
-                free(params);
+                free(params);  // 释放未使用的参数结构体
             }
         } else {
             printf("No device selected\n");
@@ -1196,31 +1194,9 @@ void ui_event_BtnDisConnect(lv_event_t * e) {
             return;
         }
 
-        char selected_device[32];
-        lv_dropdown_get_selected_str(ui_Dropdown1, selected_device, sizeof(selected_device));
-
-        if (selected_device[0] != '\0') {  
-            ConnectParams *params = get_current_connect_params(selected_device);
-            if (params && params->client) {
-                // 创建断开连接线程
-                if (pthread_create(&disconnect_thread, NULL, disconnect_thread_func, &params->client) != 0) {
-                    printf("Failed to create disconnect thread\n");
-                }
-
-                // 移除连接参数
-                remove_connect_params(selected_device);
-
-                // 销毁 MQTT 客户端实例
-                MQTTAsync_destroy(*(params->client));
-                params->client = NULL;
-
-                // 释放 ConnectParams 结构体
-                free(params);
-            } else {
-                printf("Device not found in connected devices\n");
-            }
-        } else {
-            printf("No device selected\n");
+        // 创建断开连接线程
+        if (pthread_create(&disconnect_thread, NULL, disconnect_thread_func, NULL) != 0) {
+            printf("Failed to create disconnect thread\n");
         }
     }
 }// -- add by Miao Zixiang
@@ -1271,17 +1247,100 @@ void ui_event_Spinner2(lv_event_t * e)
     }
 }
 
-///////////////////// SCREENS ////////////////////
-// 解决多线程LVGL渲染问题
-// 定义任务函数
-// 异步任务函数
-static void update_ui_async(void * task) {
-    if (is_connected) {
-        lv_img_set_src(ui_Image3, &ui_img_circlefillgreen_png);
-    } else {
-        lv_img_set_src(ui_Image3, &ui_img_circlefillred_png);
+void ui_event_IOT_S11(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+    if(event_code == LV_EVENT_SCREEN_LOAD_START) {
+        BGAnim_Animation(ui_IMG_S5_BG1, 0);
+        Ready_Animation(ui_IMG_Ok_4, 200);
+        ReadyOpa_Animation(ui_IMG_Ok_3, 300);
+        FadeOnUp_Animation(ui_BTN_Next_1, 0);
+        FadeOnUp_Animation(ui_Label_press_contimue1, 100);
+        FadeOnUp_Animation(ui_Label_Succesful1, 200);
+    }
+    if(event_code == LV_EVENT_SCREEN_UNLOAD_START) {
+        FadeOff_Animation(ui_IMG_S5_BG1, 0);
+        FadeOff_Animation(ui_IMG_Ok_4, 50);
+        FadeOff_Animation(ui_Label_Succesful1, 100);
+        FadeOff_Animation(ui_Label_press_contimue1, 150);
+        FadeOff_Animation(ui_BTN_Next_1, 200);
     }
 }
+
+void ui_event_BTN_Next_1(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+    if(event_code == LV_EVENT_CLICKED) {
+        _ui_screen_change(&ui_IOT_S2, LV_SCR_LOAD_ANIM_FADE_ON, 50, 400, &ui_IOT_S2_screen_init);
+    }
+}
+
+void ui_event_IOT_S12(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+    if(event_code == LV_EVENT_SCREEN_LOAD_START) {
+        FadeOnUp_Animation(ui_Panel_Home7, 200);
+        FadeOnUp_Animation(ui_Label_Add_Device3, 200);
+        FadeOn_Animation(ui_IMG_S2_Bg_17, 50);
+        FadeOn_Animation(ui_Label_Want_to_add3, 50);
+        FadeOnUp_Animation(ui_BtnSendMessage, 200);
+        FadeOnUp_Animation(ui_ImageLight, 200);
+        FadeOnUp_Animation(ui_Keyboard2, 200);
+        FadeOnUp_Animation(ui_TextArea1, 200);
+        FadeOnUp_Animation(ui_Panel_Return7, 200);
+        FadeOnUp_Animation(ui_PanelLamp2, 200);
+    }
+    if(event_code == LV_EVENT_SCREEN_UNLOAD_START) {
+        FadeOff_Animation(ui_IMG_S2_Bg_17, 0);
+        FadeOff_Animation(ui_IMG_S2_Bg_18, 100);
+        FadeOff_Animation(ui_IOT_S12, 500);
+        FadeOff_Animation(ui_Label_Want_to_add3, 200);
+        FadeOff_Animation(ui_Label_Add_Device3, 250);
+    }
+}
+
+void ui_event_Panel_Return7(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+    if(event_code == LV_EVENT_CLICKED) {
+        _ui_screen_change(&ui_IOT_S2, LV_SCR_LOAD_ANIM_FADE_ON, 0, 400, &ui_IOT_S2_screen_init);
+    }
+}
+
+void ChangeLightState(lv_event_t * e)
+{
+
+}
+
+void ui_event_PanelLamp2(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+    if(event_code == LV_EVENT_CLICKED) {
+        ChangeLightState(e);
+    }
+}
+void ui_event_Panel_Home7(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+    if(event_code == LV_EVENT_CLICKED) {
+        _ui_screen_change(&ui_IOT_S2, LV_SCR_LOAD_ANIM_FADE_ON, 0, 400, &ui_IOT_S2_screen_init);
+    }
+}
+void ui_event_BtnSendMessage(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+    lv_obj_t * target = lv_event_get_target(e);
+    if(event_code == LV_EVENT_CLICKED) {
+        _ui_screen_change(&ui_IOT_S10, LV_SCR_LOAD_ANIM_FADE_ON, 0, 400, &ui_IOT_S10_screen_init);
+    }
+}
+///////////////////// SCREENS ////////////////////
 
 void ui_init(void)
 {
@@ -1299,6 +1358,8 @@ void ui_init(void)
     ui_IOT_S8_screen_init();
     ui_IOT_S9_screen_init();
     ui_IOT_S10_screen_init();
+    ui_IOT_S11_screen_init();
+    ui_IOT_S12_screen_init();
     ui____initial_actions0 = lv_obj_create(NULL);
     lv_disp_load_scr(ui_IOT_S1);
 }
