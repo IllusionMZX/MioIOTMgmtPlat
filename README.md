@@ -1,90 +1,153 @@
-# Simulator project for LVGL embedded GUI Library
+# MioIOTMgmtPlat
 
-The [LVGL](https://github.com/lvgl/lvgl) is written mainly for microcontrollers and embedded systems however you can run the library **on your PC** as well without any embedded hardware. The code written on PC can be simply copied when your are using an embedded system.
+![语言](https://img.shields.io/badge/语言-C-9A90FD.svg)  ![部署](https://img.shields.io/badge/部署-VSCode-4B91D8.svg)
 
-Using a PC simulator instead of an embedded hardware has several advantages:
-* **Costs $0** because you you don't have to buy or design PCB
-* **Fast** because you don't have to design an manufacture PCB
-* **Collaborative** because any number of developers can work in the same environment
-* **Developer friendly** because much easier and faster to debug on PC
+[English](#en) | [中文](#cn)
 
-## Requirements
-The PC simulator is cross platform.  **Windows, Linux and OSX** are supported, however on Windows it's easier to get started with a [another simulator](https://docs.lvgl.io/latest/en/html/get-started/pc-simulator.html) project. 
+**基于LVGL的嵌入式物联网管理平台**
 
-* **SDL** a low level driver library to use graphics, handle mouse, keyboard etc.
-* This project (configured for **Eclipse CDT IDE**)
+## <span id="cn">MioIOTMgmtPlat</span>
 
-## Usage
+### 上手指南
 
-### Get the PC project
+本项目采用C语言编写，模拟器项目用于在PC上运行LVGL嵌入式GUI库。项目文件夹中包含项目的源代码，使用VSCode进行开发，并使用Msys2中的mingw64作为编译器。通过CMake进行项目构建。
 
-Clone the PC project and the related sub modules:
+### 环境配置要求
 
+1. **SDL** 低级驱动库，用于图形、鼠标、键盘等操作。
+2. **Msys2** 包含mingw64编译器。
+3. **VSCode** 集成开发环境。
+4. **CMake** 构建工具。
+
+#### SDL 安装
+
+- **Windows**: 可以从 [SDL 官方网站](https://www.libsdl.org/) 下载。
+- **Linux**: 可以通过终端安装：
+  ```sh
+  sudo apt-get update && sudo apt-get install -y build-essential libsdl2-dev
+  ```
+
+#### Msys2 安装
+
+1. 下载并安装 [Msys2](https://www.msys2.org/)。
+2. 打开 Msys2 终端并更新包数据库：
+   ```sh
+   pacman -Syu
+   ```
+3. 安装 mingw64 编译器和 CMake：
+   ```sh
+   pacman -S mingw-w64-x86_64-toolchain mingw-w64-x86_64-cmake mingw-w64-x86_64-SDL2
+   ```
+
+#### VSCode 安装
+
+从 [VSCode 官方网站](https://code.visualstudio.com/) 下载并安装。
+
+### 导入项目
+
+1. 克隆项目仓库：
+   ```sh
+   git clone --recursive https://github.com/IllusionMZX/MioIOTMgmtPlat.git
+   ```
+2. 打开 VSCode。
+3. 使用 VSCode 打开克隆的项目文件夹。
+
+### 使用 CMake 构建项目
+
+1. 打开 VSCode 的终端（`Ctrl + `）。
+2. 创建一个新的构建目录，例如 `build`：
+   ```sh
+   mkdir build
+   cd build
+   ```
+3. 运行 CMake 生成构建文件：
+   ```sh
+   cmake -G "MinGW Makefiles" ..
+   ```
+4. 构建项目：
+   ```sh
+   mingw32-make
+   ```
+
+### 运行项目
+
+构建完成后，可执行文件将在 `build` 目录下生成。运行可执行文件：
+```sh
+./MioIOTMgmtPlat
 ```
-git clone --recursive https://github.com/littlevgl/pc_simulator_sdl_eclipse.git
-```
 
-### Install SDL
-You can download SDL from https://www.libsdl.org/
+## <span id="en">MioIOTMgmtPlat</span>
 
-On on Linux you can install it via terminal:
-```
-sudo apt-get update && sudo apt-get install -y build-essential libsdl2-dev
-```
+### Guide
 
-### Install Eclipse CDT
-Download and install Eclipse CDT from  http://www.eclipse.org/cdt/
+This project is written in C for running the LVGL embedded GUI library on a PC. The project folder contains the source code of the project. The project is developed using VSCode and uses the mingw64 compiler from Msys2. CMake is used for building the project.
 
-### Import the PC simulator project
-1. Open Eclipse CDT
-2. Click **File->Import** and choose **General->Existing project into Workspace**
-3. Browse the root directory of the project and click Finish
-4. Build your project and run it
+### Environment
 
-## CMake
+1. **SDL** a low level driver library to use graphics, handle mouse, keyboard etc.
+2. **Msys2** containing the mingw64 compiler.
+3. **VSCode** integrated development environment.
+4. **CMake** build tool.
 
-The following steps can be used with CMake on a Unix-like system. This may also work on other OSes but has not been tested.
+#### SDL Installation
 
-1. Ensure CMake is installed, i.e. the `cmake` command works on the terminal.
-2. Make a new directory. The name doesn't matter but `build` will be used for this tutorial.
-3. Type `cd build`.
-4. Type `cmake ..`. CMake will generate the appropriate build files.
-5. Type `make -j4` or (more portable) `cmake --build . --parallel`.
+- **Windows**: Download from [SDL official website](https://www.libsdl.org/).
+- **Linux**: Install via terminal:
+  ```sh
+  sudo apt-get update && sudo apt-get install -y build-essential libsdl2-dev
+  ```
 
-**NOTE:** `--parallel` is supported from CMake v3.12 onwards. If you are using an older version of CMake, remove `--parallel` from the command or use the make option.
+#### Msys2 Installation
 
-6. The binary will be in `../bin/main`, and can be run by typing that command.
+1. Download and install [Msys2](https://www.msys2.org/).
+2. Open Msys2 terminal and update package database:
+   ```sh
+   pacman -Syu
+   ```
+3. Install mingw64 compiler and CMake:
+   ```sh
+   pacman -S mingw-w64-x86_64-toolchain mingw-w64-x86_64-cmake mingw-w64-x86_64-SDL2
+   ```
 
-## Docker
-1. Build the docker container
-```
-docker build -t lvgl_simulator .
-```
-2. Run the docker container
-```
-docker run lvgl_simulator
-```
-GUI with docker is platform dependent. For example, on macOS you can follow 
-[this tutorial](https://cntnr.io/running-guis-with-docker-on-mac-os-x-a14df6a76efc) 
-and run a command similar to:
-```
-docker run -e DISPLAY=10.103.56.101:0 lvgl_simulator
-```
+#### VSCode Installation
 
-Note that on macOS, you may need to enable indirect GLX rendering before starting Xquartz:
-```
-defaults write org.macosforge.xquartz.X11 enable_iglx -bool true
-open -a Xquartz
-```
+Download and install VSCode from [VSCode official website](https://code.visualstudio.com/).
 
-For Linux environments with X Server, the following will the `docker run` command. Note that the first command, `xhost +` grants access to X server to everyone.
+### Import Project
 
-```
-xhost +
-docker run -e DISPLAY=$DISPLAY -v /tmp/.X11-unix/:/tmp/.X11-unix:ro -t lvgl_simulator
+1. Clone the project repository:
+   ```sh
+   git clone --recursive https://github.com/IllusionMZX/MioIOTMgmtPlat.git
+   ```
+2. Open VSCode.
+3. Open the cloned project folder in VSCode.
+
+### Build Project with CMake
+
+1. Open the VSCode terminal (`Ctrl + `).
+2. Create a new build directory, for example `build`:
+   ```sh
+   mkdir build
+   cd build
+   ```
+3. Run CMake to generate build files:
+   ```sh
+   cmake -G "MinGW Makefiles" ..
+   ```
+4. Build the project:
+   ```sh
+   mingw32-make
+   ```
+
+### Run Project
+
+After building, the executable file will be in the `build` directory. Run the executable:
+```sh
+./MioIOTMgmtPlat
 ```
 
 ## Contributing
+
 1. Fork it!
 2. Create your feature branch: `git checkout -b my-new-feature`
 3. Commit your changes: `git commit -am 'Add some feature'`
@@ -92,3 +155,15 @@ docker run -e DISPLAY=$DISPLAY -v /tmp/.X11-unix/:/tmp/.X11-unix:ro -t lvgl_simu
 5. Submit a pull request!
 
 If you find an issue, please report it via GitHub!
+
+### Author
+
+martin.zx.miao@outlook.com
+
+### Reference
+
+- [LVGL GitHub](https://github.com/lvgl/lvgl)
+
+### Copyright
+
+The project is licensed under the MIT License, for more information see [LICENSE](https://github.com/IllusionMZX/MioIOTMgmtPlat/blob/main/LICENSE).
