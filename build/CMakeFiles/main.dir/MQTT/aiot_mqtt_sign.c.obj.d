@@ -1,5 +1,5 @@
 CMakeFiles/main.dir/MQTT/aiot_mqtt_sign.c.obj: \
- E:\Code_Project\VScode\C_Cpp\LVGL\lv_port_pc_eclipse-release-v8.3\MQTT\aiot_mqtt_sign.c \
+ E:\Code_Project\Git\MioIOTMgmtPlat\MQTT\aiot_mqtt_sign.c \
  C:/msys64/mingw64/include/stdlib.h C:/msys64/mingw64/include/corecrt.h \
  C:/msys64/mingw64/include/_mingw.h \
  C:/msys64/mingw64/include/_mingw_mac.h \

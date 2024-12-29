@@ -503,10 +503,10 @@ file(REMOVE_RECURSE
   "CMakeFiles/main.dir/main.c.obj.d"
   "CMakeFiles/main.dir/mouse_cursor_icon.c.obj"
   "CMakeFiles/main.dir/mouse_cursor_icon.c.obj.d"
-  "E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/bin/libmain.dll.a"
-  "E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/bin/main.exe"
-  "E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/bin/main.exe.manifest"
-  "E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/bin/main.pdb"
+  "E:/Code_Project/Git/MioIOTMgmtPlat/bin/libmain.dll.a"
+  "E:/Code_Project/Git/MioIOTMgmtPlat/bin/main.exe"
+  "E:/Code_Project/Git/MioIOTMgmtPlat/bin/main.exe.manifest"
+  "E:/Code_Project/Git/MioIOTMgmtPlat/bin/main.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

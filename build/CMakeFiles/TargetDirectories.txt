@@ -1,4 +1,4 @@
-E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/build/CMakeFiles/main.dir
-E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/build/CMakeFiles/run.dir
-E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/build/CMakeFiles/edit_cache.dir
-E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3/build/CMakeFiles/rebuild_cache.dir
+E:/Code_Project/Git/MioIOTMgmtPlat/build/CMakeFiles/main.dir
+E:/Code_Project/Git/MioIOTMgmtPlat/build/CMakeFiles/run.dir
+E:/Code_Project/Git/MioIOTMgmtPlat/build/CMakeFiles/edit_cache.dir
+E:/Code_Project/Git/MioIOTMgmtPlat/build/CMakeFiles/rebuild_cache.dir

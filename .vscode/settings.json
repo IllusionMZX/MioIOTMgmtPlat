@@ -1,5 +1,5 @@
 {
-    "cmake.sourceDirectory": "E:/Code_Project/VScode/C_Cpp/LVGL/lv_port_pc_eclipse-release-v8.3",
+    "cmake.sourceDirectory": "E:/Code_Project/Git/MioIOTMgmtPlat",
     "C_Cpp.default.compilerPath": "C:\\msys64\\mingw64\\bin\\gcc.exe",
     "files.associations": {
         "sdl.h": "c",

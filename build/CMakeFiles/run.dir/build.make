@@ -52,10 +52,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = E:\Code_Project\VScode\C_Cpp\LVGL\lv_port_pc_eclipse-release-v8.3
+CMAKE_SOURCE_DIR = E:\Code_Project\Git\MioIOTMgmtPlat
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = E:\Code_Project\VScode\C_Cpp\LVGL\lv_port_pc_eclipse-release-v8.3\build
+CMAKE_BINARY_DIR = E:\Code_Project\Git\MioIOTMgmtPlat\build
 
 # Utility rule file for run.
 
@@ -66,7 +66,7 @@ include CMakeFiles/run.dir/compiler_depend.make
 include CMakeFiles/run.dir/progress.make
 
 CMakeFiles/run:
-	E:\Code_Project\VScode\C_Cpp\LVGL\lv_port_pc_eclipse-release-v8.3\bin\main
+	E:\Code_Project\Git\MioIOTMgmtPlat\bin\main
 
 CMakeFiles/run.dir/codegen:
 .PHONY : CMakeFiles/run.dir/codegen
@@ -84,6 +84,6 @@ CMakeFiles/run.dir/clean:
 .PHONY : CMakeFiles/run.dir/clean
 
 CMakeFiles/run.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" E:\Code_Project\VScode\C_Cpp\LVGL\lv_port_pc_eclipse-release-v8.3 E:\Code_Project\VScode\C_Cpp\LVGL\lv_port_pc_eclipse-release-v8.3 E:\Code_Project\VScode\C_Cpp\LVGL\lv_port_pc_eclipse-release-v8.3\build E:\Code_Project\VScode\C_Cpp\LVGL\lv_port_pc_eclipse-release-v8.3\build E:\Code_Project\VScode\C_Cpp\LVGL\lv_port_pc_eclipse-release-v8.3\build\CMakeFiles\run.dir\DependInfo.cmake "--color=$(COLOR)"
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" E:\Code_Project\Git\MioIOTMgmtPlat E:\Code_Project\Git\MioIOTMgmtPlat E:\Code_Project\Git\MioIOTMgmtPlat\build E:\Code_Project\Git\MioIOTMgmtPlat\build E:\Code_Project\Git\MioIOTMgmtPlat\build\CMakeFiles\run.dir\DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/run.dir/depend
 
