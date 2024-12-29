@@ -304,7 +304,7 @@ extern lv_obj_t * ui_ImageLamp2;
 void ui_event_Panel_Home7(lv_event_t * e);
 extern lv_obj_t * ui_Panel_Home7;
 extern lv_obj_t * ui_ImageHome7;
-extern lv_obj_t * ui_TextArea1;
+extern lv_obj_t * ui_TextArea;
 extern lv_obj_t * ui_Keyboard2;
 extern lv_obj_t * ui_ImageLight;
 void ui_event_BtnSendMessage(lv_event_t * e);

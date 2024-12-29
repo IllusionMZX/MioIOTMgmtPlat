@@ -42,6 +42,7 @@ int connect_mqtt(char *device_name, MQTTAsync *client);
 int query_device_info(char *device_name, char *product_key, char *device_secret, char *address, char *topic, int *qos);
 int query_device_names(char ***device_names, int *device_count);
 int disconnect_mqtt(MQTTAsync *client);
+void send_message_mqtt(char *device_name,MQTTAsync *client);
 MQTTAsync mqtt_client_create(const char *address, const char *clientId, const char *username, const char *password);
 int add_connect_params(ConnectParams *params);
 ConnectParams* get_current_connect_params(const char *device_name);

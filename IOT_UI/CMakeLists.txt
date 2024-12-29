@@ -8,6 +8,8 @@ SET(SOURCES screens/ui_IOT_S1.c
     screens/ui_IOT_S8.c
     screens/ui_IOT_S9.c
     screens/ui_IOT_S10.c
+    screens/ui_IOT_S11.c
+    screens/ui_IOT_S12.c
     ui.c
     components/ui_comp_hook.c
     ui_helpers.c

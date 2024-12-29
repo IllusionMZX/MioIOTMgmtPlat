@@ -328,7 +328,7 @@ lv_obj_t * ui_ImageLamp2;
 void ui_event_Panel_Home7(lv_event_t * e);
 lv_obj_t * ui_Panel_Home7;
 lv_obj_t * ui_ImageHome7;
-lv_obj_t * ui_TextArea1;
+lv_obj_t * ui_TextArea;
 lv_obj_t * ui_Keyboard2;
 lv_obj_t * ui_ImageLight;
 void ui_event_BtnSendMessage(lv_event_t * e);
@@ -1343,7 +1343,7 @@ void ui_event_IOT_S12(lv_event_t * e)
         FadeOnUp_Animation(ui_BtnSendMessage, 200);
         FadeOnUp_Animation(ui_ImageLight, 200);
         FadeOnUp_Animation(ui_Keyboard2, 200);
-        FadeOnUp_Animation(ui_TextArea1, 200);
+        FadeOnUp_Animation(ui_TextArea, 200);
         FadeOnUp_Animation(ui_Panel_Return7, 200);
         FadeOnUp_Animation(ui_PanelLamp2, 200);
     }
@@ -1365,17 +1365,12 @@ void ui_event_Panel_Return7(lv_event_t * e)
     }
 }
 
-void ChangeLightState(lv_event_t * e)
-{
-
-}
-
 void ui_event_PanelLamp2(lv_event_t * e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
     lv_obj_t * target = lv_event_get_target(e);
     if(event_code == LV_EVENT_CLICKED) {
-        ChangeLightState(e);
+        
     }
 }
 void ui_event_Panel_Home7(lv_event_t * e)
@@ -1388,10 +1383,14 @@ void ui_event_Panel_Home7(lv_event_t * e)
 }
 void ui_event_BtnSendMessage(lv_event_t * e)
 {
+    // 获取选中的设备名
+    char selected_device[32];
+    lv_dropdown_get_selected_str(ui_Dropdown1, selected_device, sizeof(selected_device));
+
     lv_event_code_t event_code = lv_event_get_code(e);
     lv_obj_t * target = lv_event_get_target(e);
     if(event_code == LV_EVENT_CLICKED) {
-        _ui_screen_change(&ui_IOT_S10, LV_SCR_LOAD_ANIM_FADE_ON, 0, 400, &ui_IOT_S10_screen_init);
+       send_message_mqtt(selected_device,&mqtt_client);
     }
 }
 ///////////////////// SCREENS ////////////////////

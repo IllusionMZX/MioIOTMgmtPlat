@@ -19,7 +19,7 @@
 #include <string.h>
 #include <sqlite3.h>
 #include "MQTTAsync_publish.h"
-
+#include "../IOT_UI/ui.h"
 
 
 int finished = 0;
@@ -328,4 +328,46 @@ int disconnect_mqtt(MQTTAsync *client) {
 
     MQTTAsync_destroy(client);
     return rc;
+}
+
+void send_message_mqtt(char *device_name,MQTTAsync *client) {
+    // 获取 TextArea 中的文本
+    const char *message = lv_textarea_get_text(ui_TextArea);
+    if (message == NULL || strlen(message) == 0) {
+        printf("No message to send\n");
+        return;
+    }
+
+    // 准备 MQTT 消息
+    MQTTAsync_responseOptions opts = MQTTAsync_responseOptions_initializer;
+    MQTTAsync_message pubmsg = MQTTAsync_message_initializer;
+
+    opts.onSuccess = onSend;
+    opts.onFailure = onSendFailure;
+    opts.context = *client;
+
+    pubmsg.payload = (void *)message;
+    pubmsg.payloadlen = strlen(message);
+    pubmsg.qos = QOS;
+    pubmsg.retained = 0;
+
+    // 查询设备信息
+    char product_key[100];
+    char device_secret[100];
+    char address[200];
+    char topic[200];
+    int qos;
+    int rc;
+
+    rc = query_device_info(device_name, product_key, device_secret, address, topic, &qos);
+    if (rc != SQLITE_OK) {
+        printf("Failed to query device info, return code %d\n", rc);
+    }
+    // 发送 MQTT 消息
+    rc = MQTTAsync_sendMessage(*client, topic, &pubmsg, &opts);
+    if (rc != MQTTASYNC_SUCCESS) {
+        printf("Failed to start sendMessage, return code %d\n", rc);
+    } else {
+        printf("Message sent: %s\n", message);
+    }
 }

@@ -104,14 +104,16 @@ void ui_IOT_S12_screen_init(void)
     lv_obj_add_flag(ui_ImageHome7, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
     lv_obj_clear_flag(ui_ImageHome7, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
 
-    ui_TextArea1 = lv_textarea_create(ui_IOT_S12);
-    lv_obj_set_width(ui_TextArea1, 300);
-    lv_obj_set_height(ui_TextArea1, 70);
-    lv_obj_set_x(ui_TextArea1, 10);
-    lv_obj_set_y(ui_TextArea1, 200);
-    lv_obj_set_align(ui_TextArea1, LV_ALIGN_CENTER);
-    lv_textarea_set_placeholder_text(ui_TextArea1, "Placeholder...");
-
+    ui_TextArea = lv_textarea_create(ui_IOT_S12);
+    lv_obj_move_foreground(ui_TextArea);
+    lv_obj_set_width(ui_TextArea, 300);
+    lv_obj_set_height(ui_TextArea, 70);
+    lv_obj_set_x(ui_TextArea, 0);
+    lv_obj_set_y(ui_TextArea, 0);
+    lv_obj_set_align(ui_TextArea, LV_ALIGN_CENTER);
+    lv_textarea_set_placeholder_text(ui_TextArea, "Type something to send...");
+    // 添加文本 "Hello World"
+    lv_textarea_add_text(ui_TextArea, "Hello World");
 
 
     ui_Keyboard2 = lv_keyboard_create(ui_IOT_S12);
@@ -122,7 +124,7 @@ void ui_IOT_S12_screen_init(void)
     lv_obj_set_align(ui_Keyboard2, LV_ALIGN_CENTER);
 
     ui_ImageLight = lv_img_create(ui_IOT_S12);
-    lv_img_set_src(ui_ImageLight, &ui_img_circlefillred_png);
+    lv_img_set_src(ui_ImageLight, &ui_img_circlefillgreen_png);
     lv_obj_set_width(ui_ImageLight, LV_SIZE_CONTENT);   /// 1
     lv_obj_set_height(ui_ImageLight, LV_SIZE_CONTENT);    /// 1
     lv_obj_set_x(ui_ImageLight, 30);
@@ -154,7 +156,7 @@ void ui_IOT_S12_screen_init(void)
     lv_obj_add_event_cb(ui_Panel_Return7, ui_event_Panel_Return7, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_PanelLamp2, ui_event_PanelLamp2, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_Panel_Home7, ui_event_Panel_Home7, LV_EVENT_ALL, NULL);
-    lv_keyboard_set_textarea(ui_Keyboard2, ui_TextArea1);
+    lv_keyboard_set_textarea(ui_Keyboard2, ui_TextArea);
     lv_obj_add_event_cb(ui_BtnSendMessage, ui_event_BtnSendMessage, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_IOT_S12, ui_event_IOT_S12, LV_EVENT_ALL, NULL);
 
